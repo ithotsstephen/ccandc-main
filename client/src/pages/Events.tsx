@@ -28,7 +28,9 @@ const upcomingEvents: Event[] = [
   }
 ];
 
-const pastEvents: Event[] = [
+const pastEvents: Event[] = [];
+/*
+const archivedPastEvents: Event[] = [
   {
     id: "bian-banking-summit-2024",
     title: "CC&C Solutions at the BIAN Banking Summit 2025",
@@ -97,6 +99,7 @@ From deep-dive dialogues to award-winning results, CC&C's presence at the Summit
     imagePath: "/assets/Images/BIAN Summit Nov23 London.png"
   }
 ];
+*/
 
 export default function Events() {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
@@ -323,6 +326,7 @@ export default function Events() {
       )}
 
       {/* Past Events Section */}
+      {pastEvents.length > 0 && (
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -376,6 +380,7 @@ export default function Events() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Event Details Modal */}
       <Dialog open={!!selectedEvent} onOpenChange={() => setSelectedEvent(null)}>

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
+import ContactForm from "@/components/ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Insurance() {
@@ -282,6 +283,24 @@ export default function Insurance() {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Insurance Architecture Enquiry */}
+      <section className="py-20 section-darker">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <div className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+              Insurance architecture enquiry
+            </div>
+            <h2 className="mb-5 text-3xl font-bold text-foreground md:text-5xl">
+              Talk to Our Architect
+            </h2>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Tell us where your insurance technology landscape needs to go. Our specialists can help with modernization, architecture, integration, and a practical transformation roadmap.
+            </p>
+          </div>
+          <ContactForm showServiceInterest={false} />
         </div>
       </section>
 

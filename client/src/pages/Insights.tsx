@@ -173,6 +173,128 @@ const caseStudies: CaseStudy[] = [
   }
 ];
 
+const archiveEntries = [
+  {
+    type: "Position",
+    subject: "AI readiness",
+    title: "Readiness is decided in the architecture, long before the model arrives",
+    description: "Why artificial intelligence readiness turns on semantics, service boundaries and decision provenance rather than on model selection, and what that means for a bank.",
+    status: "Published now"
+  },
+  {
+    type: "Article",
+    subject: "BIAN",
+    title: "Getting ready for BIAN",
+    description: "What an institution has to have in place before adopting the Service Landscape is useful.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "IT4IT",
+    title: "A CIO level view of IT4IT",
+    description: "The standard read from the top of the technology function rather than from inside it.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "IT4IT",
+    title: "Is IT4IT the architecture for DevOps and SAFe?",
+    description: "Whether a reference architecture for managing digital delivery fits the way delivery is now organised.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "IT4IT",
+    title: "Seven reasons why IT4IT is good news for enterprise IT",
+    description: "The argument for architecting the technology function itself.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "IT4IT",
+    title: "IT4IT and TOGAF: how do they fit together?",
+    description: "Two Open Group standards that answer different questions, and how they are used together.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "IT4IT",
+    title: "Why the new IT4IT reference architecture is a game changer",
+    description: "What changed in the standard and why it mattered.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "TOGAF",
+    title: "Why I still like TOGAF",
+    description: "A defence of the method against the objection that it is too heavy to use.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "TOGAF",
+    title: "TOGAF certified. Congrats. Now what next?",
+    description: "What a newly certified practitioner should do with the certification.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "TOGAF",
+    title: "What is TOGAF Essentials 2018 and why does it matter?",
+    description: "A change to the certification path, and its consequences for practitioners.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "Practice",
+    title: "How do we relate to The Open Group?",
+    description: "The relationship between the practice and the standards body.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "Transformation",
+    title: "Business transformation or digital transformation: what is the difference?",
+    description: "A distinction that is usually skipped and usually matters.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "Practice",
+    title: "Do you really need an architecture tool?",
+    description: "When a repository earns its cost and when it becomes the work.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "Practice",
+    title: "Enterprise architecture maturity",
+    description: "What maturity means for an architecture function, and how to assess it honestly.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "Transformation",
+    title: "Is your organization like a layer cake?",
+    description: "On organisational layering and the architecture that results from it.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "Practice",
+    title: "Architecture foundations for the digital age",
+    description: "What holds up when the delivery model changes underneath the architecture.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  },
+  {
+    type: "Article",
+    subject: "Sector",
+    title: "eHealth vision",
+    description: "Architecture in a health context, from an earlier engagement.",
+    status: "Recovered from the public archive. Being restored to its original address."
+  }
+];
+
 export default function Insights() {
   const [, setLocation] = useLocation();
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudy | null>(null);
@@ -309,6 +431,131 @@ export default function Insights() {
               Real success stories from leading organizations worldwide—empowering banks and financial 
               institutions to achieve excellence through BIAN and enterprise architecture
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-b from-background to-muted/30 border-b border-border/80">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">Insights</p>
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              Writing on architecture, standards and what actually changes.
+            </h2>
+            <p className="mx-auto max-w-4xl text-lg text-muted-foreground leading-relaxed">
+              CC and C published consistently on enterprise architecture for over a decade, and seventeen of those articles survive in the public archive. They are being restored to this section, each at the address it originally held, because the arguments in them have not aged and the search history attached to them is worth recovering.
+            </p>
+          </div>
+
+          <div className="mb-10 flex flex-wrap items-center justify-center gap-3 text-sm">
+            <button className="premium-button px-5 py-2.5 rounded-lg font-semibold">Read the position</button>
+            <button className="border border-border bg-card px-5 py-2.5 rounded-lg font-semibold text-foreground hover:bg-muted transition-colors">Suggest a subject</button>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-4 mb-12">
+            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Archived articles</div>
+              <div className="text-3xl font-bold text-foreground">17</div>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Subjects</div>
+              <div className="text-base font-semibold text-foreground">IT4IT, TOGAF, BIAN</div>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Restoration</div>
+              <div className="text-base font-semibold text-foreground">In progress</div>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Original URLs</div>
+              <div className="text-base font-semibold text-foreground">Preserved</div>
+            </div>
+          </div>
+
+          <div className="mb-16 rounded-3xl border border-border bg-card p-8 shadow-sm">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">In brief</h3>
+            <ul className="space-y-3 text-base text-muted-foreground leading-relaxed">
+              <li>• Seventeen CC and C articles have been recovered from the public archive and are being restored to this section.</li>
+              <li>• Each will be republished at a URL that preserves its original slug, so the historic search signal transfers.</li>
+              <li>• The largest group concerns IT4IT, where CC and C published repeatedly on the standard and its relationship to TOGAF and DevOps.</li>
+              <li>• The current position piece on AI readiness is published and is the argument the older writing leads towards.</li>
+              <li>• New writing will appear here rather than on a third party platform, so it accrues to this domain.</li>
+            </ul>
+          </div>
+
+          <div className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Why this section is thin today</h3>
+            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+              <p className="mb-4 text-base leading-relaxed text-muted-foreground">
+                The archive is being restored, deliberately slowly. The previous site went through three platform migrations without redirects, and the article archive was among the casualties. Seventeen articles have been located in the public web archive, spanning IT4IT, TOGAF, business transformation, architecture maturity and architecture tooling.
+              </p>
+              <p className="mb-4 text-base leading-relaxed text-muted-foreground">
+                Restoring them properly is slower than reposting them. Each needs its original address preserved so the historic search signal transfers, its claims checked against what has changed since publication, and a note where the argument has moved on. An article republished carelessly reads as neglect rather than as heritage.
+              </p>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                They will appear here as that work completes. In the meantime the position piece on AI readiness is the current argument, and it is the one the older writing was heading towards.
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-16 rounded-3xl border border-border bg-card p-8 shadow-sm">
+            <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">Published now</h3>
+            </div>
+            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6">
+              <h4 className="text-2xl font-bold text-foreground mb-3">Architecture for AI readiness</h4>
+              <p className="text-base text-muted-foreground mb-5">
+                Why readiness is decided by semantics, service boundaries and decision provenance rather than by model selection, and what that means for a bank.
+              </p>
+              <button className="premium-button px-5 py-2.5 rounded-lg font-semibold">Read the position</button>
+            </div>
+          </div>
+
+          <div className="mb-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Everything in one place</h3>
+            <div className="mb-6 flex flex-wrap gap-2 text-sm">
+              {['All', 'Position', 'Article', 'AI readiness', 'BIAN', 'IT4IT', 'Practice', 'Sector', 'TOGAF', 'Transformation'].map((tag) => (
+                <span key={tag} className="rounded-full border border-border bg-card px-3 py-1.5 text-muted-foreground">{tag}</span>
+              ))}
+            </div>
+
+            <div className="space-y-4">
+              {archiveEntries.map((entry, index) => (
+                <div key={`${entry.title}-${index}`} className="rounded-2xl border border-border bg-card p-5 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex flex-wrap items-center gap-2 mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                    <span>{entry.type}</span>
+                    <span>•</span>
+                    <span>{entry.subject}</span>
+                  </div>
+                  <h4 className="text-xl md:text-2xl font-bold text-foreground mb-2">{entry.title}</h4>
+                  <p className="text-base text-muted-foreground leading-relaxed mb-3">{entry.description}</p>
+                  <p className="text-sm text-muted-foreground">{entry.status}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Questions we are asked</h3>
+            <div className="space-y-4">
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <h4 className="text-lg font-bold text-foreground mb-2">Why restore old articles rather than write new ones?</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Both, and the old ones first because they carry a search history that new writing has to earn from nothing. An article that has been cited and linked for years is a more valuable asset than a new post, provided it is still true.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <h4 className="text-lg font-bold text-foreground mb-2">Will the original URLs still work?</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  That is the point of doing it this way. Each restored article keeps its original slug under this section, and the historic addresses redirect to it, so existing links and search results resolve rather than breaking.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <h4 className="text-lg font-bold text-foreground mb-2">Do you publish on other platforms?</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  Sparingly, and not as the primary home. Writing published only on a third party platform builds that platform’s standing rather than ours, which is a lesson this rebuild exists to apply.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

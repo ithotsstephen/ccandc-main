@@ -891,8 +891,21 @@ async function registerRoutes(app2) {
         }
         console.log("Using absolute fallback logos");
         res.json([
+          { name: "L&T", logoPath: "assets/Client Logos/client-L&T.png", alt: "L&T Logo" },
+          { name: "P&G", logoPath: "assets/Client Logos/client-P&G.png", alt: "P&G Logo" },
           { name: "ADB", logoPath: "assets/Client Logos/client-adb.png", alt: "ADB Logo" },
-          { name: "AXA", logoPath: "assets/Client Logos/client-axa.png", alt: "AXA Logo" }
+          { name: "AXA", logoPath: "assets/Client Logos/client-axa.png", alt: "AXA Logo" },
+          { name: "BMC", logoPath: "assets/Client Logos/client-bmc.png", alt: "BMC Logo" },
+          { name: "CISCO", logoPath: "assets/Client Logos/client-cisco.png", alt: "CISCO Logo" },
+          { name: "COGNIZANT", logoPath: "assets/Client Logos/client-cognizant.png", alt: "COGNIZANT Logo" },
+          { name: "COSTCO", logoPath: "assets/Client Logos/client-costco.png", alt: "COSTCO Logo" },
+          { name: "FULTON", logoPath: "assets/Client Logos/client-fulton.png", alt: "FULTON Logo" },
+          { name: "HSBC", logoPath: "assets/Client Logos/client-hsbc.png", alt: "HSBC Logo" },
+          { name: "JOHNSON & JOHNSON", logoPath: "assets/Client Logos/client-johnson & johnson.png", alt: "JOHNSON & JOHNSON Logo" },
+          { name: "MLC", logoPath: "assets/Client Logos/client-mlc.png", alt: "MLC Logo" },
+          { name: "QBE", logoPath: "assets/Client Logos/client-qbe.png", alt: "QBE Logo" },
+          { name: "VODAFONE", logoPath: "assets/Client Logos/client-vodafone.png", alt: "VODAFONE Logo" },
+          { name: "WESTPAC", logoPath: "assets/Client Logos/client-westpac.png", alt: "WESTPAC Logo" }
         ]);
         return;
       }
@@ -1184,9 +1197,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+var basePath = process.env.VITE_BASE_PATH || "/";
 var vite_config_default = defineConfig({
-  base: "/",
-  // Set base path for root domain deployment
+  base: basePath,
   plugins: [
     react(),
     runtimeErrorOverlay(),

@@ -7,6 +7,59 @@ import Footer from "@/components/Footer";
 import ImageZoom from "@/components/ImageZoom";
 import { Mail, Linkedin } from "lucide-react";
 
+const recordTimeline = [
+  {
+    year: "2001",
+    title: "The practice on record",
+    description: "The earliest public capture of ccandcsolutions.com dates to September 2001. Enterprise architecture has been the whole of the work since, which is unusual: most firms in this space arrived from somewhere else.",
+  },
+  {
+    year: "2009",
+    title: "TOGAF",
+    description: "TOGAF training appears in the public record, beginning a certification practice that has run continuously ever since and still forms the spine of the Academy.",
+  },
+  {
+    year: "2013",
+    title: "ArchiMate",
+    description: "ArchiMate joins the curriculum, extending the practice from method into modelling notation.",
+  },
+  {
+    year: "2014",
+    title: "Delivery at scale, across two continents",
+    description: "A year of continuous certification delivery. TOGAF courses ran in Adelaide, Brisbane, Canberra, Melbourne and Sydney, and in Bangalore, Chennai, Hyderabad and Kolkata. CC and C also appeared at The Open Group Conference in Bangalore that January.",
+  },
+  {
+    year: "2015",
+    title: "Tooling",
+    description: "Sparx Enterprise Architect training is added, on the view that a method without a repository decays into a folder of diagrams.",
+  },
+  {
+    year: "2016",
+    title: "Certification without a classroom",
+    description: "ArchiMate 2.1 certification runs in Sydney and, for the first time, as self paced e-learning. The online delivery that the Academy portal now carries starts here.",
+  },
+  {
+    year: "2017",
+    title: "IT4IT",
+    description: "IT4IT joins the curriculum, turning the practice toward the architecture of the technology function itself rather than only the business it serves.",
+  },
+  {
+    year: "2019",
+    title: "Banking architecture",
+    description: "BIAN enters the practice, alongside competency transformation programmes for client functions. The banking specialisation that now defines the firm's deepest work begins here.",
+  },
+  {
+    year: "2024",
+    title: "Best-in-Class Partners Award",
+    description: "The Banking Industry Architecture Network recognises CC and C with its Best-in-Class Partners Award, for refreshing the enterprise architecture strategy of a major European bank.",
+  },
+  {
+    year: "2026",
+    title: "Software",
+    description: "An architecture decisioning engine and a semantic data modeller enter private beta with design partners, built on the same method the practice has taught for two decades.",
+  },
+];
+
 export default function About() {
   const [, setLocation] = useLocation();
 
@@ -149,7 +202,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our Story - Founded */}
+      {false && (
+      /* Our Story - Founded */
       <section className="py-20 section-darker">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-stretch">
@@ -234,6 +288,143 @@ export default function About() {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+      )}
+
+      <section className="border-b border-border bg-background py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl space-y-20 px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+            <div>
+              <div className="mb-5 inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">About</div>
+              <h2 className="mb-6 text-3xl font-bold leading-tight text-foreground md:text-5xl">An architecture practice that also teaches.</h2>
+              <p className="mb-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">CC and C has worked on enterprise architecture for more than two decades, and the unusual thing about the practice is not its longevity but its shape. The same people advise on architecture, teach the standards that define it, and are now building software that automates parts of the work. Each of the three keeps the other two honest.</p>
+              <div className="flex flex-wrap gap-3">
+                <button onClick={() => setLocation("/contact")} className="premium-button rounded-lg px-5 py-3 font-semibold">Start a conversation</button>
+                <button onClick={() => setLocation("/insights")} className="rounded-lg border border-border bg-card px-5 py-3 font-semibold text-foreground transition-colors hover:bg-muted">Read the position</button>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                ["20+", "In architecture years"],
+                ["BIAN", "Accredited Education Partner"],
+                ["Two sides", "Solutions and Academy"],
+                ["Five", "Sectors: banking, insurance, manufacturing and more"],
+              ].map(([value, label]) => (
+                <div key={label} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                  <div className="mb-2 text-2xl font-bold text-primary">{value}</div>
+                  <div className="text-sm leading-relaxed text-muted-foreground">{label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <div className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-primary">In brief</div>
+              <h3 className="text-3xl font-bold text-foreground">A practice built around shared understanding.</h3>
+            </div>
+            <ul className="space-y-4 text-lg leading-relaxed text-muted-foreground">
+              <li>CC and C is an enterprise architecture practice working principally with banks and complex enterprises.</li>
+              <li>The firm is an Accredited Education Partner for BIAN, the Banking Industry Architecture Network.</li>
+              <li>It operates as two sides: CC and C Solutions for advisory and software, CC and C Academy for accredited certification.</li>
+              <li>The consultants who deliver engagements are the people who teach the courses.</li>
+              <li>Two products are in private beta with design partners, both built on the practice's own method.</li>
+            </ul>
+          </div>
+
+          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <div className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-primary">Our point of view</div>
+              <h3 className="text-3xl font-bold text-foreground md:text-4xl">Architecture is a management capability.</h3>
+            </div>
+            <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
+              <p>Architecture is frequently treated as a technical documentation function, and where it is treated that way it becomes one. The alternative view, which this practice holds, is that architecture exists to improve a specific class of decision: the ones that are expensive to reverse and are usually taken with insufficient evidence.</p>
+              <p>That framing has consequences. It means an architecture function is judged by decision quality rather than by artefact completeness. It means a model is worth building only to the level of detail some decision requires. And it means architecture has authority only where it is trusted, which has to be earned rather than assigned.</p>
+              <p>It also explains why the practice teaches. A standard learned properly is a shared vocabulary, and a shared vocabulary is what lets a group of people disagree precisely enough to settle something. That is a more useful outcome than a certificate, and it is why our courses are taught by people who are using the material elsewhere.</p>
+            </div>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <div className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-primary">Structure</div>
+              <h3 className="text-3xl font-bold text-foreground">Two sides, one practice</h3>
+            </div>
+            <div>
+              <p className="mb-6 text-lg leading-relaxed text-muted-foreground">CC and C Solutions covers advisory work and the software. CC and C Academy covers accredited certification and corporate learning. They address different buyers with different cycles, which is why they are presented separately.</p>
+              <p className="mb-6 text-lg leading-relaxed text-muted-foreground">They are not separate businesses. The body of knowledge is shared and so are the people.</p>
+              <div className="flex flex-wrap gap-3">
+                <button onClick={() => setLocation("/services")} className="rounded-lg border border-border bg-card px-5 py-3 font-semibold text-foreground transition-colors hover:bg-muted">CC and C Solutions</button>
+                <button onClick={() => setLocation("/training")} className="rounded-lg border border-border bg-card px-5 py-3 font-semibold text-foreground transition-colors hover:bg-muted">CC and C Academy</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="mb-10 text-center">
+              <div className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-primary">How we work</div>
+              <h3 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">Three commitments that shape engagements.</h3>
+              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-muted-foreground">Each of these costs us something, which is the only reason they are worth stating.</p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {[
+                ["Independence", "We do not implement", "CC and C is not a systems integrator and does not bid for the delivery work that follows an architecture. It means our recommendations carry no implementation interest, and it means we turn down revenue."],
+                ["Separation", "We do not assure our own work", "Where CC and C has designed an architecture, the assurance role belongs to somebody else. We say so rather than accepting both engagements."],
+                ["Handover", "Nothing requires us to stay", "Artefacts are designed to be operated by the client, and an engagement is not complete until somebody internal owns each one. Dependency is not a business model we want."],
+              ].map(([label, title, description]) => (
+                <div key={label} className="rounded-2xl border border-border bg-card p-7 shadow-sm">
+                  <div className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary">{label}</div>
+                  <h4 className="mb-4 text-2xl font-bold text-foreground">{title}</h4>
+                  <p className="leading-relaxed text-muted-foreground">{description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Record */}
+      <section className="relative overflow-hidden bg-background py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-16 max-w-3xl text-center">
+            <div className="mb-5 inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+              The record
+            </div>
+            <h2 className="mb-6 text-3xl font-bold text-foreground md:text-5xl">
+              Two decades, as a record rather than an adjective.
+            </h2>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              Every entry below can be checked. The dates drawn from the public web archive mark when something first appears on the record, which is a lower bound rather than a start date, and the wording says so.
+            </p>
+          </div>
+
+          <div className="relative mx-auto max-w-5xl">
+            <div className="absolute bottom-4 left-4 top-4 w-1 -translate-x-1/2 rounded-full bg-gradient-to-b from-primary/20 via-primary to-secondary/50 shadow-[0_0_18px_rgba(33,119,205,0.28)] md:left-1/2" aria-hidden="true" />
+            <div className="space-y-8 md:space-y-10">
+              {recordTimeline.map((entry, index) => (
+                <div key={entry.year} className="relative grid md:grid-cols-2 md:gap-12">
+                  <div className={`pl-12 md:pl-0 ${index % 2 === 0 ? "md:col-start-1 md:text-right" : "md:col-start-2"}`}>
+                    <div className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 md:bg-gradient-to-br md:from-card md:to-primary/[0.03]">
+                      <div className={`mb-3 flex items-center gap-3 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                        <span className="text-2xl font-bold text-primary">{entry.year}</span>
+                        <span className="h-2 w-2 rounded-full bg-secondary" aria-hidden="true" />
+                      </div>
+                      <h3 className="mb-3 text-xl font-bold text-card-foreground">{entry.title}</h3>
+                      <p className="text-sm leading-relaxed text-muted-foreground">{entry.description}</p>
+                    </div>
+                  </div>
+                  <div
+                    className={`absolute top-9 hidden h-0.5 bg-gradient-to-r from-primary/30 to-primary md:block ${index % 2 === 0 ? "right-1/2 w-6" : "left-1/2 w-6"}`}
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="absolute left-4 top-6 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full border-4 border-background bg-primary shadow-[0_0_0_3px_rgba(33,119,205,0.2),0_4px_12px_rgba(33,119,205,0.35)] md:left-1/2"
+                    aria-hidden="true"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

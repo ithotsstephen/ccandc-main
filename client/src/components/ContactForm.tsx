@@ -24,7 +24,11 @@ declare global {
 const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || "https://formspree.io/f/xanavjan";
 
 
-export default function ContactForm() {
+interface ContactFormProps {
+  showServiceInterest?: boolean;
+}
+
+export default function ContactForm({ showServiceInterest = true }: ContactFormProps) {
   const { toast } = useToast();
   const [privacyDialogOpen, setPrivacyDialogOpen] = useState(false);
   const [termsDialogOpen, setTermsDialogOpen] = useState(false);
@@ -299,28 +303,30 @@ export default function ContactForm() {
                 </Select>
               </div>
               
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-card-foreground" htmlFor="service">Service Interest</label>
-                <Select value={formData.service} onValueChange={(value) => setFormData({...formData, service: value})}>
-                  <SelectTrigger data-testid="select-service">
-                    <SelectValue placeholder="Select Service" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="togaf-training">TOGAF® Training</SelectItem>
-                    <SelectItem value="bian-training">BIAN Training</SelectItem>
-                    {/* <SelectItem value="bian-sig">BIAN SIG</SelectItem> */}
-                    <SelectItem value="it4it-training">IT4IT™ Training</SelectItem>
-                    <SelectItem value="archiq">ArchiQ</SelectItem>
-                    <SelectItem value="adviseiq">AdviseIQ</SelectItem>
-                    <SelectItem value="stratiq">StratIQ</SelectItem>
-                    <SelectItem value="enterprise-consulting">Enterprise Architecture Consulting</SelectItem>
-                    <SelectItem value="business-architecture">Business Architecture</SelectItem>
-                    <SelectItem value="digital-transformation">Digital Transformation</SelectItem>
-                     <SelectItem value="architecting-for-ai">Architecting for AI Course</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+              {showServiceInterest && (
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-card-foreground" htmlFor="service">Service Interest</label>
+                  <Select value={formData.service} onValueChange={(value) => setFormData({...formData, service: value})}>
+                    <SelectTrigger data-testid="select-service">
+                      <SelectValue placeholder="Select Service" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="togaf-training">TOGAF® Training</SelectItem>
+                      <SelectItem value="bian-training">BIAN Training</SelectItem>
+                      {/* <SelectItem value="bian-sig">BIAN SIG</SelectItem> */}
+                      <SelectItem value="it4it-training">IT4IT™ Training</SelectItem>
+                      <SelectItem value="archiq">ArchiQ</SelectItem>
+                      <SelectItem value="adviseiq">AdviseIQ</SelectItem>
+                      <SelectItem value="stratiq">StratIQ</SelectItem>
+                      <SelectItem value="enterprise-consulting">Enterprise Architecture Consulting</SelectItem>
+                      <SelectItem value="business-architecture">Business Architecture</SelectItem>
+                      <SelectItem value="digital-transformation">Digital Transformation</SelectItem>
+                      <SelectItem value="architecting-for-ai">Architecting for AI Course</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
               
               <div className="space-y-2">
                 <label className="text-sm font-medium text-card-foreground" htmlFor="message">Message *</label>

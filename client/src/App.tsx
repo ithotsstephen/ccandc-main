@@ -17,6 +17,7 @@ import About from "@/pages/About";
 import WhatWeDo from "@/pages/WhatWeDo";
 import Training from "@/pages/Training";
 import Insights from "@/pages/Insights";
+import CaseStudies from "@/pages/CaseStudies";
 import Industry from "@/pages/Industry";
 import BIAN from "@/pages/BIAN";
 import BianSIG from "@/pages/BianSIG";
@@ -75,6 +76,7 @@ function AppRouter() {
       <Route path="/" component={Home} />
       <Route path="/what-we-do" component={WhatWeDo} />
       <Route path="/ccandc-training" component={Training} />
+      <Route path="/training" component={Training} />
       <Route path="/training/architecting-the-ai-powered-bank" component={ArchitectingAIPoweredBank} />
       <Route path="/training/architecture-foundations" component={ArchitectureFoundations} />
       <Route path="/training/archimate" component={ArchiMate} />
@@ -107,6 +109,7 @@ function AppRouter() {
       <Route path="/bian-training" component={BIAN} />
       <Route path="/bian-sig" component={BianSIG} />
       <Route path="/insights" component={Insights} />
+      <Route path="/case-studies" component={CaseStudies} />
       <Route path="/events" component={Events} />
       <Route path="/services/bian-foundation" component={BianFoundation} />
       <Route path="/services/togaf-training" component={TogafTraining} />
@@ -135,11 +138,7 @@ function AppRouter() {
 }
 
 function App() {
-  // No base path needed for root domain deployment
-  // const basePath = "/demo/";
-
-  const basePath = "";
-
+  const basePath = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
 
   return (
     <QueryClientProvider client={queryClient}>

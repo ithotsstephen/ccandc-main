@@ -1,6 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { useStaticOrQuery, staticData, type ClientLogo } from '@/lib/staticData';
 
+function getLogoSource(logoPath: string): string {
+  const normalizedPath = logoPath.replace(/^assets\/Client Logos\//, 'assets/ClientLogos/');
+
+  if (normalizedPath.startsWith('/') || /^https?:\/\//.test(normalizedPath)) {
+    return normalizedPath;
+  }
+
+  return `${import.meta.env.BASE_URL}${normalizedPath}`;
+}
+
 export default function ClientLogosCarousel() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -58,7 +68,7 @@ export default function ClientLogosCarousel() {
 
   if (isLoading) {
     return (
-      <section className="py-16 section-dark">
+      <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
@@ -74,7 +84,7 @@ export default function ClientLogosCarousel() {
   }
 
   return (
-    <section className="py-16 section-dark">
+    <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
@@ -103,7 +113,7 @@ export default function ClientLogosCarousel() {
                 data-testid={`client-logo-${client.name.toLowerCase()}`}
               >
                 <img
-                  src={client.logoPath}
+                  src={getLogoSource(client.logoPath)}
                   alt={client.alt}
                   className="max-w-full max-h-full object-contain"
                   onLoad={() => {
@@ -125,8 +135,8 @@ export default function ClientLogosCarousel() {
           </div>
           
           {/* Gradient overlays for seamless effect */}
-          <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-[hsl(220,13%,7%)] to-transparent pointer-events-none"></div>
-          <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-[hsl(220,13%,7%)] to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
         </div>
         
       </div>

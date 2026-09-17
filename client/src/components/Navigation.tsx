@@ -68,25 +68,25 @@ export default function Navigation() {
                     <div className="bg-card border border-border rounded-md shadow-lg">
                       <div className="py-2">
                         <button 
-                          onClick={() => { setLocation('/ccandc-training'); setIsWhatWeDoOpen(false); }}
+                          onClick={() => { window.location.href = 'https://training1.ccandcsolutions.com/'; }}
                           className="w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
                           data-testid="dropdown-training"
                         >
-                          ArchIQ (Training)
+                          Training
                         </button>
                         <button 
-                          onClick={() => { setLocation('/consulting'); setIsWhatWeDoOpen(false); }}
+                          onClick={() => { window.location.href = 'https://consulting1.ccandcsolutions.com'; }}
                           className="w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
                           data-testid="dropdown-consulting"
                         >
-                          AdviseIQ (Consulting)
+                          Consulting
                         </button>
                         <button 
-                          onClick={() => { setLocation('/viztools'); setIsWhatWeDoOpen(false); }}
+                          onClick={() => { window.location.href = 'https://products1.ccandcsolutions.com'; }}
                           className="w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
                           data-testid="dropdown-viztools"
                         >
-                          StratIQ (Visualisation Tools)
+                          Products
                         </button>
                         {/* <button 
                           onClick={() => { setLocation('/bian-training'); setIsWhatWeDoOpen(false); }}
@@ -124,11 +124,11 @@ export default function Navigation() {
                     <div className="bg-card border border-border rounded-md shadow-lg">
                       <div className="py-2">
                         <button 
-                          onClick={() => { setLocation('/banking'); setIsIndustriesOpen(false); }}
+                          onClick={() => { window.location.href = 'https://bian1.ccandcsolutions.com'; }}
                           className="w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
                           data-testid="dropdown-banking"
                         >
-                          Banking
+                          Banking & BIAN
                         </button>
                         <button 
                           onClick={() => { setLocation('/insurance'); setIsIndustriesOpen(false); }}
@@ -144,23 +144,30 @@ export default function Navigation() {
                         >
                           Manufacturing
                         </button>
+                        <button
+                          type="button"
+                          disabled
+                          className="w-full cursor-default px-4 py-2 text-left text-muted-foreground/70 transition-colors"
+                          data-testid="dropdown-health"
+                        >
+                          Health
+                        </button>
+                        <button
+                          type="button"
+                          disabled
+                          className="w-full cursor-default px-4 py-2 text-left text-muted-foreground/70 transition-colors"
+                          data-testid="dropdown-retail"
+                        >
+                          Retail
+                        </button>
                       </div>
                     </div>
                   </div>
                 )}
               </div>
               
-              <button onClick={() => setLocation('/bian-training')} className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-bian">
-                BIAN
-              </button>
-              <button onClick={() => setLocation('/bian-sig')} className="text-muted-foreground hover:text-primary transition-colors">
-                BIAN SIG
-              </button>
               <button onClick={() => setLocation('/insights')} className="text-muted-foreground hover:text-primary transition-colors">
                 Insights
-              </button>
-              <button onClick={() => setLocation('/events')} className="text-muted-foreground hover:text-primary transition-colors" data-testid="link-events">
-                Events
               </button>
               <button onClick={() => setLocation('/about')} className="text-muted-foreground hover:text-primary transition-colors">
                 About
@@ -223,21 +230,21 @@ export default function Navigation() {
               {mobileWhatWeDoOpen && (
                 <div className="pl-4 space-y-1">
                   <button 
-                    onClick={() => { setLocation('/ccandc-training'); setIsMobileMenuOpen(false); }} 
+                    onClick={() => { window.location.href = 'https://training.ccandcsolutions.com/'; }} 
                     className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
                     data-testid="mobile-link-training"
                   >
                     ArchIQ (Training)
                   </button>
                   <button 
-                    onClick={() => { setLocation('/consulting'); setIsMobileMenuOpen(false); }} 
+                    onClick={() => { window.location.href = 'https://consulting.ccandcsolutions.com'; }} 
                     className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
                     data-testid="mobile-link-consulting"
                   >
                     AdviseIQ (Consulting)
                   </button>
                   <button 
-                    onClick={() => { setLocation('/viztools'); setIsMobileMenuOpen(false); }} 
+                    onClick={() => { window.location.href = 'https://products.ccandcsolutions.com'; }} 
                     className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
                     data-testid="mobile-link-viztools"
                   >
@@ -266,7 +273,7 @@ export default function Navigation() {
               {mobileIndustriesOpen && (
                 <div className="pl-4 space-y-1">
                   <button 
-                    onClick={() => { setLocation('/banking'); setIsMobileMenuOpen(false); }} 
+                    onClick={() => { window.location.href = 'https://bian1.ccandcsolutions.com'; }}
                     className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
                     data-testid="mobile-link-banking"
                   >
@@ -286,37 +293,32 @@ export default function Navigation() {
                   >
                     Manufacturing
                   </button>
+                  <button
+                    type="button"
+                    disabled
+                    className="block w-full cursor-default rounded-md px-4 py-2 text-left text-muted-foreground/70 transition-colors text-base"
+                    data-testid="mobile-link-health"
+                  >
+                    Health
+                  </button>
+                  <button
+                    type="button"
+                    disabled
+                    className="block w-full cursor-default rounded-md px-4 py-2 text-left text-muted-foreground/70 transition-colors text-base"
+                    data-testid="mobile-link-retail"
+                  >
+                    Retail
+                  </button>
                 </div>
               )}
               
               {/* Other Menu Items */}
-              <button 
-                onClick={() => { setLocation('/bian-training'); setIsMobileMenuOpen(false); }} 
-                className="block w-full text-left px-3 py-3 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
-                data-testid="mobile-link-bian-top"
-              >
-                BIAN
-              </button>
-              <button 
-                onClick={() => { setLocation('/bian-sig'); setIsMobileMenuOpen(false); }} 
-                className="block w-full text-left px-3 py-3 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
-                data-testid="mobile-link-bian-sig"
-              >
-                BIAN SIG
-              </button>
               <button 
                 onClick={() => { setLocation('/insights'); setIsMobileMenuOpen(false); }} 
                 className="block w-full text-left px-3 py-3 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
                 data-testid="mobile-link-insights"
               >
                 Insights
-              </button>
-              <button 
-                onClick={() => { setLocation('/events'); setIsMobileMenuOpen(false); }} 
-                className="block w-full text-left px-3 py-3 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
-                data-testid="mobile-link-events"
-              >
-                Events
               </button>
               <button 
                 onClick={() => { setLocation('/about'); setIsMobileMenuOpen(false); }} 

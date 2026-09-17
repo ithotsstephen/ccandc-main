@@ -168,7 +168,7 @@ export default function WhatWeDo() {
 
           <div className="text-center">
             <button 
-              onClick={() => setLocation('/ccandc-training')}
+              onClick={() => { window.location.href = 'https://training.ccandcsolutions.com'; }}
               className="premium-button px-8 py-4 rounded-lg font-semibold text-lg transition-all transform hover:scale-105"
               data-testid="button-training-learn-more"
             >

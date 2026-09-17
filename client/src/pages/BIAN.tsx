@@ -230,14 +230,6 @@ export default function BIAN() {
                   </h3>
                 </div>
               </CardContent>
-              <div className="w-full bg-gray-900 px-3 py-4">
-                <img 
-                  src="/assets/Images/Step1.png" 
-                  alt="Step 1: Capture current state"
-                  className="w-full h-auto object-contain"
-                  data-testid="img-step-1"
-                />
-              </div>
               <CardContent className="p-4 pt-4 flex-grow">
                 <ul className="space-y-1.5">
                   <li className="flex items-start">
@@ -280,14 +272,6 @@ export default function BIAN() {
                   </h3>
                 </div>
               </CardContent>
-              <div className="w-full bg-gray-900 px-3 py-4">
-                <img 
-                  src="/assets/Images/Step2.png" 
-                  alt="Step 2: Map and classify"
-                  className="w-full h-auto object-contain"
-                  data-testid="img-step-2"
-                />
-              </div>
               <CardContent className="p-4 pt-4 flex-grow">
                 <ul className="space-y-1.5">
                   <li className="flex items-start">
@@ -322,14 +306,6 @@ export default function BIAN() {
                   </h3>
                 </div>
               </CardContent>
-              <div className="w-full bg-gray-900 px-3 py-4">
-                <img 
-                  src="/assets/Images/Step3.png" 
-                  alt="Step 3: Align and wrap"
-                  className="w-full h-auto object-contain"
-                  data-testid="img-step-3"
-                />
-              </div>
               <CardContent className="p-4 pt-4 flex-grow">
                 <ul className="space-y-1.5">
                   <li className="flex items-start">
@@ -364,14 +340,6 @@ export default function BIAN() {
                   </h3>
                 </div>
               </CardContent>
-              <div className="w-full bg-gray-900 px-3 py-4">
-                <img 
-                  src="/assets/Images/Step4.png" 
-                  alt="Step 4: Rationalize and reuse"
-                  className="w-full h-auto object-contain"
-                  data-testid="img-step-4"
-                />
-              </div>
               <CardContent className="p-4 pt-4 flex-grow">
                 <ul className="space-y-1.5">
                   <li className="flex items-start">
@@ -690,6 +658,24 @@ export default function BIAN() {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+      {/* BIAN Special Interest Group CTA */}
+      <section className="py-16 bg-primary">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+            Join the Special Interest Group for Free
+          </h2>
+          <p className="text-lg text-primary-foreground/85 mb-8">
+            Connect with fellow BIAN practitioners, share insights, and stay involved in the latest banking architecture conversations.
+          </p>
+          <button
+            onClick={() => setLocation("/bian-sig")}
+            className="bg-white text-primary px-8 py-3 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-xl"
+            data-testid="button-join-bian-sig"
+          >
+            Register Here
+          </button>
         </div>
       </section>
       {/* Testimonials */}

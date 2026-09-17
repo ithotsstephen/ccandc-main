@@ -1,116 +1,16 @@
-import { useRef, useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "wouter";
-import { useStaticOrQuery, staticData, type ClientLogo } from '@/lib/staticData';
 import PrivacyPolicyDialog from "@/components/PrivacyPolicyDialog";
 import TermsConditionsDialog from "@/components/TermsConditionsDialog";
 
 export default function Footer() {
-  const scrollRef = useRef<HTMLDivElement>(null);
   const [, setLocation] = useLocation();
   const [privacyDialogOpen, setPrivacyDialogOpen] = useState(false);
   const [termsDialogOpen, setTermsDialogOpen] = useState(false);
 
-  // Fetch all client logos dynamically from the API or static JSON
-  const { data: clients = [], isLoading } = useStaticOrQuery<ClientLogo[]>(
-    '/api/client-logos',
-    staticData.getClientLogos,
-    { staleTime: 5 * 60 * 1000 }
-  );
-
-  // Duplicate the array for seamless infinite scroll
-  const duplicatedClients = [...clients, ...clients];
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let animationId: number;
-    let scrollPosition = 0;
-    const scrollSpeed = 0.5; // Adjust speed here (pixels per frame)
-
-    const animate = () => {
-      scrollPosition += scrollSpeed;
-      
-      // Reset scroll position when we've scrolled through one complete set
-      if (scrollPosition >= scrollContainer.scrollWidth / 2) {
-        scrollPosition = 0;
-      }
-      
-      scrollContainer.scrollLeft = scrollPosition;
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animationId = requestAnimationFrame(animate);
-
-    // Pause animation on hover
-    const handleMouseEnter = () => {
-      cancelAnimationFrame(animationId);
-    };
-
-    const handleMouseLeave = () => {
-      animationId = requestAnimationFrame(animate);
-    };
-
-    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
-    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
-      scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, [duplicatedClients.length]);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <footer className="bg-primary text-primary-foreground py-16">
+    <footer className="bg-gray-800 text-primary-foreground py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Client Logos Carousel */}
-        {clients.length > 0 && (
-          <div className="pb-8 mb-8 border-b border-primary-foreground/20">
-            <div className="text-center mb-6">
-              <h3 className="text-lg font-semibold text-primary-foreground/90">
-                Trusted by Industry Leaders
-              </h3>
-            </div>
-            
-            {/* Constantly Rotating Carousel */}
-            <div className="relative overflow-hidden max-w-4xl mx-auto">
-              <div 
-                ref={scrollRef}
-                className="flex space-x-8 overflow-hidden"
-                style={{ 
-                  scrollBehavior: 'unset',
-                  WebkitOverflowScrolling: 'touch'
-                }}
-              >
-                {duplicatedClients.map((client, index) => (
-                  <div
-                    key={`${client.name}-${index}`}
-                    className="flex-shrink-0 w-24 h-14 flex items-center justify-center"
-                  >
-                    <img
-                      src={client.logoPath}
-                      alt={client.alt}
-                      className="max-w-full max-h-full object-contain opacity-80 hover:opacity-100 transition-opacity"
-                    />
-                  </div>
-                ))}
-              </div>
-              
-              {/* Gradient overlays for seamless effect */}
-              <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-primary to-transparent pointer-events-none"></div>
-              <div className="absolute top-0 right-0 w-16 h-full bg-gradient-to-l from-primary to-transparent pointer-events-none"></div>
-            </div>
-          </div>
-        )}
-
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
@@ -237,7 +137,7 @@ export default function Footer() {
               </li>
               <li>
                 <button 
-                  onClick={() => setLocation('/insights')} 
+                  onClick={() => setLocation('/case-studies')} 
                   className="hover:text-secondary transition-colors text-left"
                   data-testid="link-case-studies"
                 >
