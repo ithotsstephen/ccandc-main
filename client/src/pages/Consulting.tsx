@@ -4,6 +4,7 @@ import { useLocation } from "wouter";
 import Navigation from "@/components/Navigation";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import TrainingHeroBackdrop from "@/components/TrainingHeroBackdrop";
 
 export default function Consulting() {
   const [, setLocation] = useLocation();
@@ -45,7 +46,7 @@ export default function Consulting() {
     }
 
     // JSON-LD Structured Data
-    let jsonLdScript = document.querySelector('script[type="application/ld+json"]');
+    let jsonLdScript = document.querySelector<HTMLScriptElement>('script[type="application/ld+json"]');
     if (!jsonLdScript) {
       jsonLdScript = document.createElement('script');
       jsonLdScript.type = 'application/ld+json';
@@ -191,26 +192,20 @@ export default function Consulting() {
       <Navigation />
 
       {/* Hero Section */}
-      <section 
-        className="pt-24 pb-16 relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/assets/Images/Consulting.jpg)' }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <TrainingHeroBackdrop className="pt-24 pb-16" backgroundClassName="bg-[#231103]" accentClassName="bg-[#b86b12]/60">
           <div className="text-center mb-8">
             <div className="inline-block px-4 py-2 md:px-8 md:py-4 bg-white/20 border-2 border-white/40 rounded-full text-white font-bold text-2xl md:text-3xl mb-8 shadow-lg">
-              AdviseIQ
+              Consulting
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              BIAN Done Right: From <span className="text-primary">Strategy</span> to Live, Resilient Services
+              BIAN Done Right: From <span className="text-[#b86b12]">Strategy</span> to Live, Resilient Services
             </h1>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8">
               CC&C helps banks, credit unions, fintechs, product vendors, and system integrators architect on BIAN, 
               design capabilities, and implement change - with a focus on continuous value delivery
             </p>
           </div>
-        </div>
-      </section>
+      </TrainingHeroBackdrop>
 
       {/* What AdviseIQ Offers */}
       <section className="py-20 section-darker">
@@ -230,12 +225,12 @@ export default function Consulting() {
               <CardContent className="p-8">
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
-                      <span className="text-2xl font-bold text-primary">01</span>
+                    <div className="w-16 h-16 bg-[#b86b12]/10 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-[#b86b12]/20 transition-all duration-300">
+                      <span className="text-2xl font-bold text-[#b86b12]">01</span>
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-card-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-card-foreground mb-4 group-hover:text-[#b86b12] transition-colors duration-300">
                       Proven Playbooks to Adopt BIAN Right - The First Time
                     </h3>
                     <p className="text-muted-foreground leading-relaxed text-lg">
@@ -506,14 +501,14 @@ export default function Consulting() {
           {/* Recent Client Projects Subheading */}
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-4xl font-bold text-foreground mb-4">Recent Client Projects</h3>
-            <div className="w-24 h-1 bg-primary mx-auto"></div>
+            <div className="w-24 h-1 bg-[#b86b12] mx-auto"></div>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* OTP Group */}
             <Card className="premium-card group hover:shadow-2xl transition-all duration-500">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-card-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-card-foreground mb-4 group-hover:text-[#b86b12] transition-colors duration-300">
                   OTP Group BIAN Blueprint
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
@@ -530,7 +525,7 @@ export default function Consulting() {
             {/* CGD */}
             <Card className="premium-card group hover:shadow-2xl transition-all duration-500">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-card-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-card-foreground mb-4 group-hover:text-[#b86b12] transition-colors duration-300">
                   Portugal's Largest Bank
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
@@ -547,7 +542,7 @@ export default function Consulting() {
             {/* Big-4 AU/NZ Bank */}
             <Card className="premium-card group hover:shadow-2xl transition-all duration-500">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-card-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-card-foreground mb-4 group-hover:text-[#b86b12] transition-colors duration-300">
                   Big-4 AU/NZ Bank Core Modernization
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-4">
@@ -579,7 +574,7 @@ export default function Consulting() {
             <Card className="premium-card">
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <i className="fas fa-quote-left text-4xl text-primary/20"></i>
+                  <i className="fas fa-quote-left text-4xl text-[#b86b12]/20"></i>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-6 text-lg italic">
                   "CC and C Solutions is one of the leading industry experts on Enterprise Architecture. Their deep subject matter 
@@ -598,7 +593,7 @@ export default function Consulting() {
             <Card className="premium-card">
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <i className="fas fa-quote-left text-4xl text-primary/20"></i>
+                  <i className="fas fa-quote-left text-4xl text-[#b86b12]/20"></i>
                 </div>
                 <p className="text-muted-foreground leading-relaxed mb-6 text-lg italic">
                   "I sincerely thank the entire CC&C team for your excellent support throughout the BIAN adoption process. 

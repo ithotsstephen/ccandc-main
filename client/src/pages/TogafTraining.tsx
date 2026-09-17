@@ -1,15 +1,25 @@
 import { useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import TrainingHeroBackdrop from "@/components/TrainingHeroBackdrop";
 
-export default function TogafTraining() {
+type TogafTrainingProps = {
+  title?: string;
+};
+
+export default function TogafTraining({ title = "TOGAF® Practitioner Certification" }: TogafTrainingProps) {
   const [, setLocation] = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    document.title = `${title} | CC&C Solutions`;
+
+    return () => {
+      document.title = "CC&C Solutions";
+    };
+  }, [title]);
 
   const scrollToContact = () => {
     setLocation("/#contact");
@@ -20,13 +30,18 @@ export default function TogafTraining() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 section-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <TrainingHeroBackdrop className="pt-24 pb-16">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              <span className="text-primary">TOGAF®</span> Practitioner Certification
+            <Link href="/ccandc-training">
+              <a className="inline-flex items-center text-primary hover:text-white mb-6 font-semibold transition-colors group" data-testid="link-back-to-training">
+                <i className="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
+                Back to Training
+              </a>
+            </Link>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              <span className="text-primary">TOGAF®</span>{title.replace("TOGAF®", "")}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
               Based on the Updated TOGAF® Standard, 10th Edition. TOGAF® Practitioner is the most up-to-date 
               TOGAF certification, reflecting the many enhancements and updates found in The TOGAF Standard, 
               10th Edition, released in 2022.
@@ -41,8 +56,7 @@ export default function TogafTraining() {
               </button>
             </div>
           </div>
-        </div>
-      </section>
+      </TrainingHeroBackdrop>
 
       {/* Why TOGAF Section */}
       <section className="py-20 section-darker">

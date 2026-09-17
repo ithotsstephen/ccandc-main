@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useEffect } from "react";
 import CTASection from "@/components/CTASection";
+import TrainingHeroBackdrop from "@/components/TrainingHeroBackdrop";
 
 export default function TogafPractitioner() {
   useEffect(() => {
@@ -46,27 +47,25 @@ export default function TogafPractitioner() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 section-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <TrainingHeroBackdrop>
           <div className="text-center mb-12">
             <Link href="/ccandc-training">
-              <a className="inline-flex items-center text-primary hover:text-primary/80 mb-6 font-semibold transition-colors group" data-testid="link-back-to-training">
+              <a className="inline-flex items-center text-primary hover:text-white mb-6 font-semibold transition-colors group" data-testid="link-back-to-training">
                 <i className="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
                 Back to Training
               </a>
             </Link>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              TOGAF® Practitioner
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              TOGAF® EA Practitioner Certification Training
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-4">
+            <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto mb-4">
               Based on the Updated TOGAF® Standard, 10th Edition
             </p>
-            <p className="text-sm text-muted-foreground italic">
+            <p className="text-sm text-white/60 italic">
               TOGAF is a registered trademark of The Open Group
             </p>
           </div>
-        </div>
-      </section>
+      </TrainingHeroBackdrop>
 
       {/* Quick Facts */}
       <section className="py-20 bg-background">

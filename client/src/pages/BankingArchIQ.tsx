@@ -206,7 +206,7 @@ export default function BankingArchIQ() {
                 </ul>
                 
                 <button 
-                  onClick={() => setLocation('/services/togaf-training')}
+                  onClick={() => setLocation('/training/togaf-training')}
                   className="text-accent font-semibold hover:underline"
                   data-testid="button-learn-togaf"
                 >

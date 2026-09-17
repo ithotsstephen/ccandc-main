@@ -64,7 +64,7 @@ export default function Home() {
   }, [capabilityApi]);
 
   useEffect(() => {
-    let jsonLdScript = document.querySelector('script[type="application/ld+json"][data-page="home"]');
+    let jsonLdScript = document.querySelector<HTMLScriptElement>('script[type="application/ld+json"][data-page="home"]');
     if (!jsonLdScript) {
       jsonLdScript = document.createElement('script');
       jsonLdScript.type = 'application/ld+json';
@@ -226,7 +226,7 @@ export default function Home() {
         <div className="relative z-10 mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <a
             data-testid="card-solutions"
-            href="/https://consulting1.ccandcsolutions.com/"
+            href="/consulting"
             className="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-border bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-[0_20px_45px_-18px_rgba(14,49,88,0.38)] sm:p-10"
           >
             <div
@@ -279,7 +279,7 @@ export default function Home() {
 
           <a
             data-testid="card-academy"
-            href="/https://training1.ccandcsolutions.com/"
+            href="/training"
             className="group relative flex flex-col justify-between overflow-hidden rounded-[2rem] border border-border bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-transparent hover:shadow-[0_20px_45px_-18px_rgba(129,87,14,0.38)] sm:p-10"
           >
             <div

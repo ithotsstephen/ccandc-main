@@ -6,6 +6,7 @@ import { useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import CTASection from "@/components/CTASection";
 import PdfDownloadForm from "@/components/PdfDownloadForm";
+import TrainingHeroBackdrop from "@/components/TrainingHeroBackdrop";
 
 const PRACTITIONER_TRAINING_PDF_URL =
   "/assets/pdf_downloads/BIAN Foundation & Practitioner Certification Training (Trainer-Led).pdf";
@@ -131,24 +132,22 @@ export default function BianPractitionerTraining() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <section className="pt-32 pb-20 section-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <TrainingHeroBackdrop>
           <div className="text-center mb-12">
-            <Link href="/bian-training">
-              <a className="inline-flex items-center text-primary hover:text-primary/80 mb-6 font-semibold transition-colors group" data-testid="link-back-to-bian-training">
+            <Link href="/ccandc-training">
+              <a className="inline-flex items-center text-primary hover:text-white mb-6 font-semibold transition-colors group" data-testid="link-back-to-training">
                 <i className="fas fa-arrow-left mr-2 group-hover:-translate-x-1 transition-transform"></i>
-                Back to BIAN Training
+                Back to Training
               </a>
             </Link>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               BIAN Practitioner Certification Training
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto">
               Move beyond conceptual understanding and learn to apply the BIAN standard in real-world banking architecture.
             </p>
           </div>
-        </div>
-      </section>
+      </TrainingHeroBackdrop>
 
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

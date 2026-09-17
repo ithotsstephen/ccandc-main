@@ -1,18 +1,33 @@
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 import { useLocation } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import TrainingHeroBackdrop from "@/components/TrainingHeroBackdrop";
 
-export default function Training() {
+type TrainingProps = {
+  heroBadge?: string;
+  heroTitle?: ReactNode;
+  documentTitle?: string;
+  heroBackgroundClassName?: string;
+  heroAccentClassName?: string;
+};
+
+export default function Training({
+  heroBadge = "Training",
+  heroTitle = <>From Framework to <span className="text-primary">Fluency</span></>,
+  documentTitle = "ArchIQ Training Platform - BIAN, TOGAF & IT4IT Mastery | CC&C Solutions",
+  heroBackgroundClassName,
+  heroAccentClassName,
+}: TrainingProps) {
   const [, setLocation] = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
     
     // SEO Meta Tags
-    document.title = "ArchIQ Training Platform - BIAN, TOGAF & IT4IT Mastery | CC&C Solutions";
+    document.title = documentTitle;
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -37,7 +52,7 @@ export default function Training() {
     ogDescription.setAttribute('content', 'Expert-powered learning platform for BIAN, TOGAF, and IT4IT training. Scalable, practical architecture training with real-world insights.');
     
     // JSON-LD Structured Data
-    let jsonLdScript = document.querySelector('script[type="application/ld+json"]');
+    let jsonLdScript = document.querySelector<HTMLScriptElement>('script[type="application/ld+json"]');
     if (!jsonLdScript) {
       jsonLdScript = document.createElement('script');
       jsonLdScript.type = 'application/ld+json';
@@ -148,24 +163,19 @@ export default function Training() {
       if (ogDescription) ogDescription.remove();
       if (jsonLdScript) jsonLdScript.remove();
     };
-  }, []);
+  }, [documentTitle]);
 
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       {/* Hero Section */}
-      <section 
-        className="pt-24 pb-16 relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: 'url(/assets/Images/Training.jpg)' }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <TrainingHeroBackdrop className="pt-24 pb-16" backgroundClassName={heroBackgroundClassName} accentClassName={heroAccentClassName}>
           <div className="text-center mb-8">
             <div className="inline-block px-4 py-2 md:px-8 md:py-4 bg-white/20 border-2 border-white/40 rounded-full text-white font-bold text-2xl md:text-3xl mb-8 shadow-lg">
-              ArchIQ
+              {heroBadge}
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              From Framework to <span className="text-primary">Fluency</span>
+              {heroTitle}
             </h1>
             <p className="text-3xl md:text-4xl font-semibold text-white max-w-4xl mx-auto mb-6">
               BIAN Mastery, On Demand
@@ -174,8 +184,7 @@ export default function Training() {
               Expert-powered learning platform delivering practical architecture training with real-world insight
             </p>
           </div>
-        </div>
-      </section>
+      </TrainingHeroBackdrop>
    
       {/* Training Built for Your Enterprise */}
       <section className="py-20 section-dark">

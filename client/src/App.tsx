@@ -16,6 +16,8 @@ import Consulting from "@/pages/Consulting";
 import About from "@/pages/About";
 import WhatWeDo from "@/pages/WhatWeDo";
 import Training from "@/pages/Training";
+import AllCourses from "@/pages/AllCourses";
+import Products from "@/pages/Products";
 import Insights from "@/pages/Insights";
 import CaseStudies from "@/pages/CaseStudies";
 import Industry from "@/pages/Industry";
@@ -34,11 +36,15 @@ import ArchitectingAIPoweredBank from "@/pages/ArchitectingAIPoweredBank";
 import ArchiMate from "@/pages/ArchiMate";
 import SparxEA from "@/pages/SparxEA";
 import TogafPractitioner from "@/pages/TogafPractitioner";
+import TogafEaFoundationTraining from "@/pages/TogafEaFoundationTraining";
+import TogafFoundationPractitionerTraining from "@/pages/TogafFoundationPractitionerTraining";
+import TogafEaBridgeTraining from "@/pages/TogafEaBridgeTraining";
 import IT4ITFoundation from "@/pages/IT4ITFoundation";
 import BianFoundationTraining from "@/pages/BianFoundationTraining";
 import BianPractitionerTraining from "@/pages/BianPractitionerTraining";
 import BianFoundationPractitionerTraining from "@/pages/BianFoundationPractitionerTraining";
 import BianDataArchitecturePractitionerTraining from "@/pages/BianDataArchitecturePractitionerTraining";
+import BianIntegrationTraining from "@/pages/BianIntegrationTraining";
 import BianAdvisoryImplementationConsulting from "@/pages/BianAdvisoryImplementationConsulting";
 import BianDiscoveryWorkshop from "@/pages/BianDiscoveryWorkshop";
 import BianExecutiveWorkshop from "@/pages/BianExecutiveWorkshop";
@@ -77,13 +83,19 @@ function AppRouter() {
       <Route path="/what-we-do" component={WhatWeDo} />
       <Route path="/ccandc-training" component={Training} />
       <Route path="/training" component={Training} />
+      <Route path="/training/all-courses" component={AllCourses} />
+      <Route path="/products" component={Products} />
       <Route path="/training/architecting-the-ai-powered-bank" component={ArchitectingAIPoweredBank} />
       <Route path="/training/architecture-foundations" component={ArchitectureFoundations} />
       <Route path="/training/archimate" component={ArchiMate} />
       <Route path="/training/sparx-ea" component={SparxEA} />
+      <Route path="/training/togaf-training" component={TogafTraining} />
+      <Route path="/training/togaf-ea-foundation-certification-training" component={TogafEaFoundationTraining} />
       <Route path="/training/togaf-practitioner" component={TogafPractitioner} />
-      <Route path="/training/togaf-9-certified" component={() => <Redirect to="/services/togaf-training" />} />
-      <Route path="/training/togaf-business-architecture" component={() => <Redirect to="/services/togaf-training" />} />
+      <Route path="/training/togaf-foundation-practitioner-training" component={TogafFoundationPractitionerTraining} />
+      <Route path="/training/togaf-ea-bridge" component={TogafEaBridgeTraining} />
+      <Route path="/training/togaf-9-certified" component={() => <Redirect to="/training/togaf-training" />} />
+      <Route path="/training/togaf-business-architecture" component={() => <Redirect to="/training/togaf-training" />} />
       <Route path="/training/it4it-foundation" component={IT4ITFoundation} />
       <Route path="/training/bian-foundation" component={() => <Redirect to="/training/bian-foundation-certification-training" />} />
       <Route path="/training/bian-foundation-certification-training" component={BianFoundationTraining} />
@@ -93,6 +105,7 @@ function AppRouter() {
       <Route path="/training/bian-foundation-practitioner-certification-training" component={BianFoundationPractitionerTraining} />
       <Route path="/training/bian-data-architecture-partitioner-certification-training" component={() => <Redirect to="/training/bian-data-architecture-practitioner-certification-training" />} />
       <Route path="/training/bian-data-architecture-practitioner-certification-training" component={BianDataArchitecturePractitionerTraining} />
+      <Route path="/training/bian-integration" component={BianIntegrationTraining} />
       <Route path="/consulting/bian-advisory-implementation-consulting" component={BianAdvisoryImplementationConsulting} />
       <Route path="/consulting/bian-discovery-workshop" component={BianDiscoveryWorkshop} />
       <Route path="/consulting/bian-executive-workshop" component={BianExecutiveWorkshop} />
@@ -112,7 +125,7 @@ function AppRouter() {
       <Route path="/case-studies" component={CaseStudies} />
       <Route path="/events" component={Events} />
       <Route path="/services/bian-foundation" component={BianFoundation} />
-      <Route path="/services/togaf-training" component={TogafTraining} />
+      <Route path="/services/togaf-training" component={() => <Redirect to="/training/togaf-training" />} />
       <Route path="/services/it4it-management" component={It4itManagement} />
       <Route path="/about" component={About} />
       <Route path="/offerings" component={() => <Redirect to="/training/architecting-the-ai-powered-bank" />} />
