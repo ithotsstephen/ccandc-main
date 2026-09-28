@@ -34,6 +34,7 @@ import BankingArchIQ from "@/pages/BankingArchIQ";
 import ArchitectureFoundations from "@/pages/ArchitectureFoundations";
 import ArchitectingAIPoweredBank from "@/pages/ArchitectingAIPoweredBank";
 import ArchiMate from "@/pages/ArchiMate";
+import ArchiMateFoundationPractitioner from "@/pages/ArchiMateFoundationPractitioner";
 import SparxEA from "@/pages/SparxEA";
 import TogafPractitioner from "@/pages/TogafPractitionerTraining";
 import TogafEaFoundationTraining from "@/pages/TogafEaFoundationTraining";
@@ -88,6 +89,7 @@ function AppRouter() {
       <Route path="/training/architecting-the-ai-powered-bank" component={ArchitectingAIPoweredBank} />
       <Route path="/training/architecture-foundations" component={ArchitectureFoundations} />
       <Route path="/training/archimate" component={ArchiMate} />
+      <Route path="/training/archimate-foundation-practitioner" component={ArchiMateFoundationPractitioner} />
       <Route path="/training/sparx-ea" component={SparxEA} />
       <Route path="/training/togaf-training" component={TogafTraining} />
       <Route path="/training/togaf-ea-foundation-certification-training" component={TogafEaFoundationTraining} />

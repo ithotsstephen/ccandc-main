@@ -37,7 +37,7 @@ export default function Navigation() {
       label: "ArchiMate",
       items: [
         { label: "ArchiMate®3 Foundation Training", path: "/training/archimate" },
-        { label: "ArchiMate®3 Foundation & Practitioner Training", path: "/training/archimate" },
+        { label: "ArchiMate®3 Foundation & Practitioner Training", path: "/training/archimate-foundation-practitioner" },
       ],
     },
     {

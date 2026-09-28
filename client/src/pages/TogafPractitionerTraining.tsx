@@ -47,8 +47,8 @@ const included = [
   "A certificate of completion and eligibility for The Open Group's professional badge on passing the exam",
 ];
 
-function BulletList({ items }: { items: string[] }) {
-  return <ul className="space-y-4">{items.map((item) => <li key={item} className="flex items-start gap-3 text-muted-foreground leading-relaxed"><Check className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" /><span>{item}</span></li>)}</ul>;
+function BulletList({ items, textClassName = items === outcomes ? "text-white/70" : "text-muted-foreground" }: { items: string[]; textClassName?: string }) {
+  return <ul className="space-y-4">{items.map((item) => <li key={item} className={`flex items-start gap-3 leading-relaxed ${textClassName}`}><Check className="mt-1 h-5 w-5 shrink-0 text-primary" aria-hidden="true" /><span>{item}</span></li>)}</ul>;
 }
 
 export default function TogafPractitionerTraining() {
