@@ -47,6 +47,7 @@ export default function Navigation() {
         { label: "BIAN Practitioner", path: "/training/bian-practitioner-certification-training" },
         { label: "BIAN Foundation & Practitioner Training", path: "/training/bian-foundation-practitioner-certification-training" },
         { label: "BIAN Data Architecture", path: "/training/bian-data-architecture-practitioner-certification-training" },
+        { label: "BIAN Executive Workshop", path: "/training/bian-executive-workshop" },
         { label: "BIAN Integration", path: "/training/bian-integration" },
       ],
     },

@@ -50,7 +50,7 @@ import BianDataArchitecturePractitionerTraining from "@/pages/BianDataArchitectu
 import BianIntegrationTraining from "@/pages/BianIntegrationTraining";
 import BianAdvisoryImplementationConsulting from "@/pages/BianAdvisoryImplementationConsulting";
 import BianDiscoveryWorkshop from "@/pages/BianDiscoveryWorkshop";
-import BianExecutiveWorkshop from "@/pages/BianExecutiveWorkshop";
+import BianExecutiveWorkshop from "@/pages/BianExecutiveWorkshopPage";
 import Contact from "@/pages/Contact";
 import Registration from "@/pages/Registration";
 import OurOfferings from "@/pages/Our-Offerings";
@@ -110,6 +110,7 @@ function AppRouter() {
       <Route path="/training/bian-foundation-practitioner-certification-training" component={BianFoundationPractitionerCourse} />
       <Route path="/training/bian-data-architecture-partitioner-certification-training" component={() => <Redirect to="/training/bian-data-architecture-practitioner-certification-training" />} />
       <Route path="/training/bian-data-architecture-practitioner-certification-training" component={BianDataArchitecturePractitionerTraining} />
+      <Route path="/training/bian-executive-workshop" component={BianExecutiveWorkshop} />
       <Route path="/training/bian-integration" component={BianIntegrationTraining} />
       <Route path="/consulting/bian-advisory-implementation-consulting" component={BianAdvisoryImplementationConsulting} />
       <Route path="/consulting/bian-discovery-workshop" component={BianDiscoveryWorkshop} />
