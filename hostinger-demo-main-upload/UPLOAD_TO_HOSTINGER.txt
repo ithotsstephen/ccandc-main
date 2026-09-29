@@ -1,0 +1,13 @@
+CC&C Solutions static website deployment
+
+Target location: https://ccandcsolutions.com/demo/main/
+
+Upload every item in this archive to the Hostinger directory:
+public_html/demo/main/
+
+The archive contents are already at the site root. After extraction,
+index.html, .htaccess, assets/, and data/ should be directly inside
+public_html/demo/main/.
+
+The .htaccess file routes client-side pages through the React application.
+The site is built with /demo/main/ as its base path.

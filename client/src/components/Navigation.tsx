@@ -51,7 +51,12 @@ export default function Navigation() {
       ],
     },
     { label: "IT4IT", path: "/training/it4it-foundation" },
-    { label: "Elearning- ArchIQ", path: "/training" },
+    {
+      label: "Elearning- ArchIQ",
+      items: [
+        { label: "BIAN Foundation Certification Training", path: "/training/archiq-bian-foundation-certification-training" },
+      ],
+    },
     { label: "View All Courses", path: "/training/all-courses" },
   ];
 

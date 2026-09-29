@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /demo/main/
+
+  RewriteCond %{HTTP_HOST} ^bian\.ccandcsolutions\.com$ [NC]
+  RewriteRule ^bian-special-interest-group/?$ https://ccandcsolutions.com/registration [R=301,L]
+
+  RewriteRule ^about-us/?$ /demo/main/about [R=301,L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L,QSA]
+</IfModule>
