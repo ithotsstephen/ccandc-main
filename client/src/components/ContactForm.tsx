@@ -11,6 +11,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import PrivacyPolicyDialog from "@/components/PrivacyPolicyDialog";
 import TermsConditionsDialog from "@/components/TermsConditionsDialog";
 import { isStaticMode } from "@/lib/staticData";
+import { MessageSquareText, Send } from "lucide-react";
 
 declare global {
   interface Window {
@@ -26,9 +27,10 @@ const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || "https://f
 
 interface ContactFormProps {
   showServiceInterest?: boolean;
+  trainingTheme?: boolean;
 }
 
-export default function ContactForm({ showServiceInterest = true }: ContactFormProps) {
+export default function ContactForm({ showServiceInterest = true, trainingTheme = false }: ContactFormProps) {
   const { toast } = useToast();
   const [privacyDialogOpen, setPrivacyDialogOpen] = useState(false);
   const [termsDialogOpen, setTermsDialogOpen] = useState(false);
@@ -204,10 +206,19 @@ export default function ContactForm({ showServiceInterest = true }: ContactFormP
   };
 
   return (
-    <section id="contact" className="py-20 bg-primary">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className={trainingTheme ? "relative isolate overflow-hidden bg-[#0b1728] py-20" : "py-20 bg-primary"}>
+      {trainingTheme && <>
+        <div className="absolute inset-y-0 right-0 w-[58%] opacity-35 [background-image:linear-gradient(rgba(143,199,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(143,199,255,0.12)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_right,transparent,black_28%,black)]" aria-hidden="true" />
+        <div className="absolute right-[8%] top-1/2 h-[320px] w-[320px] -translate-y-1/2 rounded-full border border-[#8fc7ff]/15" aria-hidden="true" />
+      </>}
+      <div className={`relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${trainingTheme ? "text-white" : ""}`}>
+        {trainingTheme && <div className="mb-10 text-center">
+          <MessageSquareText className="mx-auto mb-4 h-8 w-8 text-[#e5bc68]" aria-hidden="true" />
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8fc7ff]">Tell us what you are working through</p>
+          <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Talk with our architecture team.</h2>
+        </div>}
 
-        <Card className="rounded-2xl shadow-2xl">
+        <Card className={`rounded-2xl shadow-2xl ${trainingTheme ? "border-[#8fc7ff]/35" : ""}`}>
           <CardContent className="p-8 md:p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -403,11 +414,11 @@ export default function ContactForm({ showServiceInterest = true }: ContactFormP
               
               <Button 
                 type="submit" 
-                className="w-full bg-accent text-accent-foreground py-4 text-lg font-semibold hover:bg-accent/90"
+                className={`w-full py-4 text-lg font-semibold ${trainingTheme ? "bg-[#e5bc68] text-[#0b1728] hover:bg-[#e5bc68]/90" : "bg-accent text-accent-foreground hover:bg-accent/90"}`}
                 disabled={contactMutation.isPending}
                 data-testid="button-submit-contact"
               >
-                {contactMutation.isPending ? "Sending..." : "Send Message"}
+                {contactMutation.isPending ? "Sending..." : <>{trainingTheme && <Send className="mr-2 h-4 w-4" aria-hidden="true" />}Send Message</>}
               </Button>
             </form>
           </CardContent>

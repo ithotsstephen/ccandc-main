@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Archive, Tags, RefreshCw, Link2, FileText, Lightbulb, Tag } from "lucide-react";
 
 interface CaseStudy {
   id: number;
@@ -417,15 +418,19 @@ export default function Insights() {
       <Navigation />
 
       {/* Hero Section */}
-      <section 
-        className="pt-24 pb-16 relative bg-cover bg-center bg-no-repeat"
+      <section
+        className="relative isolate min-h-[420px] overflow-hidden bg-[#0b1728] bg-cover bg-center bg-no-repeat pt-24 pb-16"
         style={{ backgroundImage: 'url(/assets/Images/Insights.jpg)' }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1728]/95 via-[#0b1728]/75 to-[#12345a]/65" aria-hidden="true" />
+        <div className="absolute inset-y-0 right-0 w-[58%] opacity-45 [background-image:linear-gradient(rgba(143,199,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(143,199,255,0.14)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_right,transparent,black_28%,black)]" aria-hidden="true" />
+        <div className="absolute right-[12%] top-1/2 h-[310px] w-[310px] -translate-y-1/2 rounded-full border border-[#8fc7ff]/20" aria-hidden="true" />
+        <div className="absolute right-[12%] top-1/2 h-[190px] w-[190px] -translate-y-1/2 rounded-full border border-[#e5bc68]/35" aria-hidden="true" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
+            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#e5bc68]">Insights · Client outcomes and point of view</p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Client <span className="text-primary">Transformations</span>
+              Client <span className="text-[#8fc7ff]">Transformations</span>
             </h1>
             <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
               Real success stories from leading organizations worldwide—empowering banks and financial 
@@ -435,10 +440,10 @@ export default function Insights() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-background to-muted/30 border-b border-border/80">
+      <section className="py-20 bg-[#f5f8fc] border-b border-border/80 dark:bg-[#101923]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-primary">Insights</p>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-[#176aa3] dark:text-[#8fc7ff]">Insights</p>
             <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               Writing on architecture, standards and what actually changes.
             </h2>
@@ -448,30 +453,30 @@ export default function Insights() {
           </div>
 
           <div className="mb-10 flex flex-wrap items-center justify-center gap-3 text-sm">
-            <button className="premium-button px-5 py-2.5 rounded-lg font-semibold">Read the position</button>
-            <button className="border border-border bg-card px-5 py-2.5 rounded-lg font-semibold text-foreground hover:bg-muted transition-colors">Suggest a subject</button>
+            <button className="rounded-lg bg-[#e5bc68] px-5 py-2.5 font-semibold text-[#0b1728] transition-transform hover:-translate-y-0.5">Read the position</button>
+            <button className="rounded-lg border border-[#8fc7ff]/50 bg-card px-5 py-2.5 font-semibold text-foreground transition-colors hover:bg-[#8fc7ff]/10">Suggest a subject</button>
           </div>
 
           <div className="grid gap-4 md:grid-cols-4 mb-12">
-            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Archived articles</div>
+            <div className="rounded-2xl border border-[#8fc7ff]/30 bg-card p-4 shadow-sm">
+              <div className="mb-2 flex items-center justify-between gap-3"><div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Archived articles</div><Archive className="h-5 w-5 text-[#176aa3] dark:text-[#8fc7ff]" aria-hidden="true" /></div>
               <div className="text-3xl font-bold text-foreground">17</div>
             </div>
-            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Subjects</div>
+            <div className="rounded-2xl border border-[#e5bc68]/50 bg-card p-4 shadow-sm">
+              <div className="mb-2 flex items-center justify-between gap-3"><div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Subjects</div><Tags className="h-5 w-5 text-[#9a6b13] dark:text-[#e5bc68]" aria-hidden="true" /></div>
               <div className="text-base font-semibold text-foreground">IT4IT, TOGAF, BIAN</div>
             </div>
-            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Restoration</div>
+            <div className="rounded-2xl border border-[#8fc7ff]/30 bg-card p-4 shadow-sm">
+              <div className="mb-2 flex items-center justify-between gap-3"><div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Restoration</div><RefreshCw className="h-5 w-5 text-[#176aa3] dark:text-[#8fc7ff]" aria-hidden="true" /></div>
               <div className="text-base font-semibold text-foreground">In progress</div>
             </div>
-            <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Original URLs</div>
+            <div className="rounded-2xl border border-[#e5bc68]/50 bg-card p-4 shadow-sm">
+              <div className="mb-2 flex items-center justify-between gap-3"><div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Original URLs</div><Link2 className="h-5 w-5 text-[#9a6b13] dark:text-[#e5bc68]" aria-hidden="true" /></div>
               <div className="text-base font-semibold text-foreground">Preserved</div>
             </div>
           </div>
 
-          <div className="mb-16 rounded-3xl border border-border bg-card p-8 shadow-sm">
+          <div className="mb-16 rounded-3xl border border-[#8fc7ff]/30 bg-card p-8 shadow-sm">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">In brief</h3>
             <ul className="space-y-3 text-base text-muted-foreground leading-relaxed">
               <li>• Seventeen CC and C articles have been recovered from the public archive and are being restored to this section.</li>
@@ -484,7 +489,7 @@ export default function Insights() {
 
           <div className="mb-16">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Why this section is thin today</h3>
-            <div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
+            <div className="rounded-3xl border border-[#8fc7ff]/30 bg-card p-8 shadow-sm">
               <p className="mb-4 text-base leading-relaxed text-muted-foreground">
                 The archive is being restored, deliberately slowly. The previous site went through three platform migrations without redirects, and the article archive was among the casualties. Seventeen articles have been located in the public web archive, spanning IT4IT, TOGAF, business transformation, architecture maturity and architecture tooling.
               </p>
@@ -497,11 +502,11 @@ export default function Insights() {
             </div>
           </div>
 
-          <div className="mb-16 rounded-3xl border border-border bg-card p-8 shadow-sm">
+          <div className="mb-16 rounded-3xl border border-[#8fc7ff]/30 bg-card p-8 shadow-sm">
             <div className="flex items-center justify-between flex-wrap gap-3 mb-5">
               <h3 className="text-2xl md:text-3xl font-bold text-foreground">Published now</h3>
             </div>
-            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-6">
+            <div className="rounded-2xl border border-[#e5bc68]/50 bg-[#8fc7ff]/10 p-6">
               <h4 className="text-2xl font-bold text-foreground mb-3">Architecture for AI readiness</h4>
               <p className="text-base text-muted-foreground mb-5">
                 Why readiness is decided by semantics, service boundaries and decision provenance rather than by model selection, and what that means for a bank.
@@ -514,16 +519,18 @@ export default function Insights() {
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Everything in one place</h3>
             <div className="mb-6 flex flex-wrap gap-2 text-sm">
               {['All', 'Position', 'Article', 'AI readiness', 'BIAN', 'IT4IT', 'Practice', 'Sector', 'TOGAF', 'Transformation'].map((tag) => (
-                <span key={tag} className="rounded-full border border-border bg-card px-3 py-1.5 text-muted-foreground">{tag}</span>
+                <span key={tag} className="rounded-full border border-[#8fc7ff]/30 bg-card px-3 py-1.5 text-muted-foreground">{tag}</span>
               ))}
             </div>
 
             <div className="space-y-4">
               {archiveEntries.map((entry, index) => (
-                <div key={`${entry.title}-${index}`} className="rounded-2xl border border-border bg-card p-5 shadow-sm hover:shadow-md transition-shadow">
+                <div key={`${entry.title}-${index}`} className="rounded-2xl border border-border border-l-2 border-l-[#8fc7ff] bg-card p-5 shadow-sm transition-shadow hover:border-l-[#e5bc68] hover:shadow-md">
                   <div className="flex flex-wrap items-center gap-2 mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                    {entry.type === "Position" ? <Lightbulb className="h-4 w-4 text-[#9a6b13] dark:text-[#e5bc68]" aria-hidden="true" /> : <FileText className="h-4 w-4 text-[#176aa3] dark:text-[#8fc7ff]" aria-hidden="true" />}
                     <span>{entry.type}</span>
                     <span>•</span>
+                    <Tag className="h-3.5 w-3.5 text-[#9a6b13] dark:text-[#e5bc68]" aria-hidden="true" />
                     <span>{entry.subject}</span>
                   </div>
                   <h4 className="text-xl md:text-2xl font-bold text-foreground mb-2">{entry.title}</h4>
@@ -561,7 +568,7 @@ export default function Insights() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-[#f5f8fc] dark:bg-[#101923]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((caseStudy) => (
@@ -582,7 +589,7 @@ export default function Insights() {
                     </p>
                     <button 
                       onClick={() => setSelectedCaseStudy(caseStudy)}
-                      className="text-accent font-semibold hover:underline flex items-center mt-auto"
+                      className="mt-auto flex items-center font-semibold text-[#176aa3] hover:underline dark:text-[#8fc7ff]"
                       data-testid={`button-read-case-study-${caseStudy.id}`}
                     >
                       Read Case Study <i className="fas fa-arrow-right ml-2 text-sm"></i>
@@ -596,13 +603,13 @@ export default function Insights() {
       </section>
 
       {/* Thought Leadership Section */}
-      <section className="py-20 section-dark">
+      <section className="py-20 bg-[#0b1728] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-              Thought <span className="text-primary">Leadership</span>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              Thought <span className="text-[#8fc7ff]">Leadership</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white/70 max-w-3xl mx-auto">
               Expert perspectives on BIAN, enterprise architecture, and the future of banking
             </p>
           </div>
@@ -793,12 +800,12 @@ export default function Insights() {
       </Dialog>
 
       {/* CTA Section */}
-      <section className="py-20 section-dark">
+      <section className="py-20 bg-[#0b1728] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Ready to Write Your Success Story?
           </h2>
-          <p className="text-xl text-muted-foreground mb-8">
+          <p className="text-xl text-white/70 mb-8">
             Join the leading organizations who have transformed their enterprise architecture 
             with CC&C Solutions. Let's discuss how we can help you achieve your transformation goals.
           </p>

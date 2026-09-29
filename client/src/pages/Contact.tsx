@@ -130,31 +130,32 @@ export default function Contact() {
     <div className="min-h-screen bg-background">
       <Navigation />
       {/* Hero Section */}
-      <section className="relative py-32 bg-gradient-to-br from-background via-section-dark to-section-darker overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(31,127,212,0.1),transparent_50%)]"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative isolate min-h-[420px] overflow-hidden bg-[#0b1728] py-28 text-white">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_48%,rgba(143,199,255,0.16),transparent_32%),linear-gradient(115deg,#0b1728_0%,#12345a_100%)]" aria-hidden="true" />
+        <div className="absolute inset-y-0 right-0 w-[58%] opacity-45 [background-image:linear-gradient(rgba(143,199,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(143,199,255,0.14)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_right,transparent,black_28%,black)]" aria-hidden="true" />
+        <div className="absolute right-[12%] top-1/2 h-[310px] w-[310px] -translate-y-1/2 rounded-full border border-[#8fc7ff]/20" aria-hidden="true" />
+        <div className="absolute right-[12%] top-1/2 h-[190px] w-[190px] -translate-y-1/2 rounded-full border border-[#e5bc68]/35" aria-hidden="true" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Link 
             href="/"
-            className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors mb-6 group"
+            className="inline-flex items-center gap-2 text-[#8fc7ff] hover:text-white transition-colors mb-6 group"
             data-testid="link-back-home"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             <span className="text-sm font-medium">Back to Home</span>
           </Link>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Let's Transform Together
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#e5bc68]">Contact · Start a conversation</p>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Let's Transform <span className="text-[#8fc7ff]">Together</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/75 max-w-3xl mx-auto">
             Ready to accelerate your digital transformation journey? Get in touch with our team of experts.
           </p>
         </div>
       </section>
 
-      <ContactForm />
+      <ContactForm trainingTheme />
       <Footer />
     </div>
   );

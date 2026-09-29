@@ -5,7 +5,7 @@ import Navigation from "@/components/Navigation";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import ImageZoom from "@/components/ImageZoom";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, CalendarDays, Award, Layers, Globe2, Compass, ShieldCheck, ArrowRight } from "lucide-react";
 
 const recordTimeline = [
   {
@@ -181,19 +181,19 @@ export default function About() {
       <Navigation />
 
       {/* Hero Section with Background Image */}
-      <section 
-        className="pt-24 pb-16 relative bg-cover bg-center bg-no-repeat"
+      <section
+        className="relative isolate min-h-[420px] overflow-hidden bg-[#0b1728] bg-cover bg-center bg-no-repeat pt-24 pb-16"
         style={{ backgroundImage: 'url(assets/Images/About.jpg)' }}
-        
       >
-        {/* Image Overlay */}
-        <div className="absolute inset-0 bg-black/60"></div>
-        
-        {/* Content */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0b1728]/95 via-[#0b1728]/75 to-[#12345a]/65" aria-hidden="true" />
+        <div className="absolute inset-y-0 right-0 w-[58%] opacity-45 [background-image:linear-gradient(rgba(143,199,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(143,199,255,0.14)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_right,transparent,black_28%,black)]" aria-hidden="true" />
+        <div className="absolute right-[12%] top-1/2 h-[310px] w-[310px] -translate-y-1/2 rounded-full border border-[#8fc7ff]/20" aria-hidden="true" />
+        <div className="absolute right-[12%] top-1/2 h-[190px] w-[190px] -translate-y-1/2 rounded-full border border-[#e5bc68]/35" aria-hidden="true" />
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#e5bc68]">Enterprise architecture since 2001</p>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              About <span className="text-primary">CC&C Solutions</span>
+              About <span className="text-[#8fc7ff]">CC&amp;C Solutions</span>
             </h1>
             <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
               Built on Architecture. Driven by Transformation.
@@ -294,7 +294,7 @@ export default function About() {
       </section>
       )}
 
-      <section className="border-b border-border bg-background py-20 sm:py-24">
+      <section className="border-b border-border bg-[#f5f8fc] py-20 sm:py-24 dark:bg-[#101923]">
         <div className="mx-auto max-w-7xl space-y-20 px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
@@ -308,12 +308,13 @@ export default function About() {
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                ["20+", "In architecture years"],
-                ["BIAN", "Accredited Education Partner"],
-                ["Two sides", "Solutions and Academy"],
-                ["Five", "Sectors: banking, insurance, manufacturing and more"],
-              ].map(([value, label]) => (
+                { value: "20+", label: "In architecture years", Icon: CalendarDays },
+                { value: "BIAN", label: "Accredited Education Partner", Icon: Award },
+                { value: "Two sides", label: "Solutions and Academy", Icon: Layers },
+                { value: "Five", label: "Sectors: banking, insurance, manufacturing and more", Icon: Globe2 },
+              ].map(({ value, label, Icon }) => (
                 <div key={label} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                  <Icon className="mb-4 h-6 w-6 text-[#176aa3] dark:text-[#8fc7ff]" aria-hidden="true" />
                   <div className="mb-2 text-2xl font-bold text-primary">{value}</div>
                   <div className="text-sm leading-relaxed text-muted-foreground">{label}</div>
                 </div>
@@ -370,12 +371,17 @@ export default function About() {
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {[
-                ["Independence", "We do not implement", "CC and C is not a systems integrator and does not bid for the delivery work that follows an architecture. It means our recommendations carry no implementation interest, and it means we turn down revenue."],
-                ["Separation", "We do not assure our own work", "Where CC and C has designed an architecture, the assurance role belongs to somebody else. We say so rather than accepting both engagements."],
-                ["Handover", "Nothing requires us to stay", "Artefacts are designed to be operated by the client, and an engagement is not complete until somebody internal owns each one. Dependency is not a business model we want."],
-              ].map(([label, title, description]) => (
+                { label: "Independence", title: "We do not implement", description: "CC and C is not a systems integrator and does not bid for the delivery work that follows an architecture. It means our recommendations carry no implementation interest, and it means we turn down revenue.", Icon: Compass },
+                { label: "Separation", title: "We do not assure our own work", description: "Where CC and C has designed an architecture, the assurance role belongs to somebody else. We say so rather than accepting both engagements.", Icon: ShieldCheck },
+                { label: "Handover", title: "Nothing requires us to stay", description: "Artefacts are designed to be operated by the client, and an engagement is not complete until somebody internal owns each one. Dependency is not a business model we want.", Icon: ArrowRight },
+              ].map(({ label, title, description, Icon }) => (
                 <div key={label} className="rounded-2xl border border-border bg-card p-7 shadow-sm">
-                  <div className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary">{label}</div>
+                  <div className="mb-5 flex items-center justify-between">
+                    <div className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">{label}</div>
+                    <div className="flex h-10 w-10 items-center justify-center rounded-md border border-[#8fc7ff]/35 bg-[#8fc7ff]/10 text-[#176aa3] dark:text-[#8fc7ff]">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                  </div>
                   <h4 className="mb-4 text-2xl font-bold text-foreground">{title}</h4>
                   <p className="leading-relaxed text-muted-foreground">{description}</p>
                 </div>
@@ -386,7 +392,7 @@ export default function About() {
       </section>
 
       {/* The Record */}
-      <section className="relative overflow-hidden bg-background py-20 sm:py-24">
+      <section className="relative overflow-hidden bg-[#f5f8fc] py-20 sm:py-24 dark:bg-[#101923]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-16 max-w-3xl text-center">
             <div className="mb-5 inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
@@ -401,26 +407,26 @@ export default function About() {
           </div>
 
           <div className="relative mx-auto max-w-5xl">
-            <div className="absolute bottom-4 left-4 top-4 w-1 -translate-x-1/2 rounded-full bg-gradient-to-b from-primary/20 via-primary to-secondary/50 shadow-[0_0_18px_rgba(33,119,205,0.28)] md:left-1/2" aria-hidden="true" />
+            <div className="absolute bottom-4 left-4 top-4 w-1 -translate-x-1/2 rounded-full bg-gradient-to-b from-[#8fc7ff]/20 via-[#8fc7ff] to-[#e5bc68]/70 shadow-[0_0_18px_rgba(143,199,255,0.28)] md:left-1/2" aria-hidden="true" />
             <div className="space-y-8 md:space-y-10">
               {recordTimeline.map((entry, index) => (
                 <div key={entry.year} className="relative grid md:grid-cols-2 md:gap-12">
                   <div className={`pl-12 md:pl-0 ${index % 2 === 0 ? "md:col-start-1 md:text-right" : "md:col-start-2"}`}>
-                    <div className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10 md:bg-gradient-to-br md:from-card md:to-primary/[0.03]">
+                    <div className="group rounded-2xl border border-[#8fc7ff]/25 bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#e5bc68]/70 hover:shadow-xl hover:shadow-[#8fc7ff]/10 md:bg-gradient-to-br md:from-card md:to-[#8fc7ff]/[0.04]">
                       <div className={`mb-3 flex items-center gap-3 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                        <span className="text-2xl font-bold text-primary">{entry.year}</span>
-                        <span className="h-2 w-2 rounded-full bg-secondary" aria-hidden="true" />
+                        <span className="text-2xl font-bold text-[#176aa3] dark:text-[#8fc7ff]">{entry.year}</span>
+                        <span className="h-2 w-2 rounded-full bg-[#e5bc68]" aria-hidden="true" />
                       </div>
                       <h3 className="mb-3 text-xl font-bold text-card-foreground">{entry.title}</h3>
                       <p className="text-sm leading-relaxed text-muted-foreground">{entry.description}</p>
                     </div>
                   </div>
                   <div
-                    className={`absolute top-9 hidden h-0.5 bg-gradient-to-r from-primary/30 to-primary md:block ${index % 2 === 0 ? "right-1/2 w-6" : "left-1/2 w-6"}`}
+                    className={`absolute top-9 hidden h-0.5 bg-gradient-to-r from-[#8fc7ff]/30 to-[#e5bc68]/80 md:block ${index % 2 === 0 ? "right-1/2 w-6" : "left-1/2 w-6"}`}
                     aria-hidden="true"
                   />
                   <div
-                    className="absolute left-4 top-6 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full border-4 border-background bg-primary shadow-[0_0_0_3px_rgba(33,119,205,0.2),0_4px_12px_rgba(33,119,205,0.35)] md:left-1/2"
+                    className="absolute left-4 top-6 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full border-4 border-background bg-[#12345a] shadow-[0_0_0_3px_rgba(229,188,104,0.24),0_4px_12px_rgba(18,52,90,0.35)] md:left-1/2"
                     aria-hidden="true"
                   />
                 </div>
@@ -431,7 +437,7 @@ export default function About() {
       </section>
 
       {/* BIAN Leadership */}
-      <section className="py-20 section-darker">
+      <section className="py-20 bg-[#f5f8fc] dark:bg-[#101923]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-stretch">
             <div>
@@ -823,17 +829,17 @@ export default function About() {
       )}
 
       {/* Global Reach */}
-      <section className="py-20 section-dark">
+      <section className="py-20 bg-[#0b1728] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Global Reach</h2>
-            <p className="text-xl text-muted-foreground">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Global Reach</h2>
+            <p className="text-xl text-white/70">
               Delivering services to clients across the globe with personnel based in major continents
             </p>
           </div>
 
           {/* World Map */}
-          <div className="relative bg-black rounded-2xl p-2 md:p-4 mb-12 shadow-2xl">
+          <div className="relative bg-[#12345a] border border-[#8fc7ff]/30 rounded-2xl p-2 md:p-4 mb-12 shadow-2xl">
             <div className="relative w-full">
               <ImageZoom
                 src="assets/Images/Global Reach.png" 

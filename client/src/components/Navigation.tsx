@@ -10,11 +10,9 @@ type TrainingMenuItem =
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(() => localStorage.getItem("theme") === "dark");
-  const [isWhatWeDoOpen, setIsWhatWeDoOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isFindTrainingOpen, setIsFindTrainingOpen] = useState(false);
   const [openTrainingCategory, setOpenTrainingCategory] = useState<string | null>(null);
-  const [mobileWhatWeDoOpen, setMobileWhatWeDoOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
   const [mobileFindTrainingOpen, setMobileFindTrainingOpen] = useState(false);
   const [location, setLocation] = useLocation();
@@ -53,11 +51,12 @@ export default function Navigation() {
     },
     { label: "IT4IT", path: "/training/it4it-foundation" },
     {
-      label: "Elearning- ArchIQ",
+      label: "Elearning - ArchIQ",
       items: [
-        { label: "BIAN Foundation Certification Training", path: "/training/archiq-bian-foundation-certification-training" },
+        { label: "BIAN Foundation Certification Training Elearning", path: "/training/archiq-bian-foundation-certification-training" },
       ],
     },
+      { label: "Corporate Training", path: "/training" },
     { label: "View All Courses", path: "/training/all-courses" },
   ];
 
@@ -76,7 +75,6 @@ export default function Navigation() {
   const navigateTo = (path: string) => {
     setLocation(path);
     setIsMobileMenuOpen(false);
-    setIsWhatWeDoOpen(false);
     setIsIndustriesOpen(false);
     setIsFindTrainingOpen(false);
     setOpenTrainingCategory(null);
@@ -130,7 +128,7 @@ export default function Navigation() {
                       className={mainMenuDropdownClass}
                       data-testid="dropdown-find-training"
                     >
-                      <span>Find Training</span>
+                      <span>Training</span>
                       <i className={`fas fa-chevron-down text-xs transition-transform ${isFindTrainingOpen ? 'rotate-180' : ''}`}></i>
                     </button>
                     {isFindTrainingOpen && (
@@ -186,72 +184,19 @@ export default function Navigation() {
                       </div>
                     )}
                   </div>
-                  <button onClick={() => navigateTo('/training')} className={mainMenuClass}>
-                    Corporate Training
-                  </button>
                 </>
               )}
-              {isConsultingPage && (
-                <button onClick={() => navigateTo('/consulting')} className={mainMenuClass}>
-                  Consulting
+              {!isTrainingPage && (
+                <button onClick={() => navigateTo('/training')} className={mainMenuClass}>
+                  Training
                 </button>
               )}
-              {/* What we do dropdown */}
-              <div 
-                className="relative"
-                onMouseEnter={() => setIsWhatWeDoOpen(true)}
-                onMouseLeave={() => setIsWhatWeDoOpen(false)}
-              >
-                <button 
-                  onClick={() => setLocation('/what-we-do')}
-                  className={mainMenuDropdownClass}
-                  data-testid="dropdown-what-we-do"
-                >
-                  <span>What we do</span>
-                  <i className={`fas fa-chevron-down text-xs transition-transform ${isWhatWeDoOpen ? 'rotate-180' : ''}`}></i>
-                </button>
-                
-                {/* Dropdown menu */}
-                {isWhatWeDoOpen && (
-                  <div 
-                    className="absolute top-full left-0 pt-2 w-56 z-50"
-                  >
-                    <div className={submenuPanelClass}>
-                      <div className={submenuListClass}>
-                        <button 
-                          onClick={() => navigateTo('/training')}
-                          className={submenuItemClass}
-                          data-testid="dropdown-training"
-                        >
-                          Training
-                        </button>
-                        <button 
-                          onClick={() => navigateTo('/consulting')}
-                          className={submenuItemClass}
-                          data-testid="dropdown-consulting"
-                        >
-                          Consulting
-                        </button>
-                        <button 
-                          onClick={() => navigateTo('/products')}
-                          className={submenuItemClass}
-                          data-testid="dropdown-viztools"
-                        >
-                          Products
-                        </button>
-                        {/* <button 
-                          onClick={() => { setLocation('/bian-training'); setIsWhatWeDoOpen(false); }}
-                          className="w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted transition-colors"
-                          data-testid="dropdown-bian"
-                        >
-                          BIANz
-                        </button> */}
-
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+              <button onClick={() => navigateTo('/consulting')} className={mainMenuClass}>
+                Consulting
+              </button>
+              <button onClick={() => navigateTo('/products')} className={mainMenuClass}>
+                Products
+              </button>
 
               {/* Industries We Serve dropdown */}
               <div 
@@ -376,7 +321,7 @@ export default function Navigation() {
                     className="flex items-center justify-between w-full px-3 py-3 text-foreground font-medium text-base hover:bg-muted rounded-md transition-colors"
                     data-testid="mobile-dropdown-find-training"
                   >
-                    <span>Find Training</span>
+                    <span>Training</span>
                     <i className={`fas fa-chevron-down text-sm transition-transform ${mobileFindTrainingOpen ? 'rotate-180' : ''}`}></i>
                   </button>
                   {mobileFindTrainingOpen && (
@@ -420,66 +365,31 @@ export default function Navigation() {
                       ))}
                     </div>
                   )}
-                  <button 
-                    onClick={() => navigateTo('/training')} 
-                    className="block w-full text-left px-3 py-3 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
-                    data-testid="mobile-link-corporate-training"
-                  >
-                    Corporate Training
-                  </button>
                 </>
               )}
-              {/* What we do - Collapsible */}
-              <button 
-                onClick={() => setMobileWhatWeDoOpen(!mobileWhatWeDoOpen)}
-                className="flex items-center justify-between w-full px-3 py-3 text-foreground font-medium text-base hover:bg-muted rounded-md transition-colors"
-                data-testid="mobile-dropdown-what-we-do"
-              >
-                <span>What we do</span>
-                <i className={`fas fa-chevron-down text-sm transition-transform ${mobileWhatWeDoOpen ? 'rotate-180' : ''}`}></i>
-              </button>
-              {mobileWhatWeDoOpen && (
-                <div className={mobileSubmenuPanelClass}>
-                  <button 
-                    onClick={() => navigateTo('/training')} 
-                    className={mobileSubmenuItemClass}
-                    data-testid="mobile-link-training"
-                  >
-                    ArchIQ (Training)
-                  </button>
-                  <button 
-                    onClick={() => navigateTo('/consulting')} 
-                    className={mobileSubmenuItemClass}
-                    data-testid="mobile-link-consulting"
-                  >
-                    AdviseIQ (Consulting)
-                  </button>
-                  <button 
-                    onClick={() => navigateTo('/products')} 
-                    className={mobileSubmenuItemClass}
-                    data-testid="mobile-link-viztools"
-                  >
-                    StratIQ (Visualisation Tools)
-                  </button>
-                  {/* <button 
-                    onClick={() => { setLocation('/bian-training'); setIsMobileMenuOpen(false); }} 
-                    className="block w-full text-left px-4 py-2 text-muted-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
-                    data-testid="mobile-link-bian"
-                  >
-                    BIANq
-                  </button> */}
-
-                </div>
-              )}
-              {isConsultingPage && (
-                <button 
-                  onClick={() => navigateTo('/consulting')} 
+              {!isTrainingPage && (
+                <button
+                  onClick={() => navigateTo('/training')}
                   className="block w-full text-left px-3 py-3 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
-                  data-testid="mobile-link-consulting-page"
+                  data-testid="mobile-link-training"
                 >
-                  Consulting
+                  Training
                 </button>
               )}
+              <button
+                onClick={() => navigateTo('/consulting')}
+                className="block w-full text-left px-3 py-3 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
+                data-testid="mobile-link-consulting"
+              >
+                Consulting
+              </button>
+              <button
+                onClick={() => navigateTo('/products')}
+                className="block w-full text-left px-3 py-3 text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors text-base"
+                data-testid="mobile-link-products"
+              >
+                Products
+              </button>
               
               {/* Industries We Serve - Collapsible */}
               <button 

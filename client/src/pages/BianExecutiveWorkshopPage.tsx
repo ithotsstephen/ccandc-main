@@ -74,7 +74,8 @@ function BulletList({ items }: { items: string[] }) {
 }
 
 export default function BianExecutiveWorkshopPage() {
-  const [, setLocation] = useLocation();
+  const [location, setLocation] = useLocation();
+  const isTrainingPage = location === "/training/bian-executive-workshop";
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -119,12 +120,15 @@ export default function BianExecutiveWorkshopPage() {
         </section>
 
         <section className="overflow-hidden bg-[#f5f8fc] py-20 dark:bg-[#101923]">
-          <div className="mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+          <div className={`mx-auto grid max-w-7xl gap-14 px-4 sm:px-6 ${isTrainingPage ? "lg:grid-cols-3" : "lg:grid-cols-[0.8fr_1.2fr]"} lg:px-8`}>
             <div>
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">Why CC&amp;C</p>
               <h2 className="text-3xl font-bold sm:text-5xl">Why CC&amp;C</h2>
               <div className="mt-8"><BulletList items={reasonsToChoose} /></div>
             </div>
+            {isTrainingPage && <div className="relative min-h-[330px] overflow-hidden border border-border bg-muted/40">
+              <img src="/assets/Images/togaf-corporate-team.jpg" alt="Colleagues collaborating in a professional workplace" className="absolute inset-0 h-full w-full object-cover" />
+            </div>}
             <div className="border-l-2 border-[#e5bc68] pl-8 lg:pl-12">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">Who this workshop is for</p>
               <h2 className="text-3xl font-bold sm:text-4xl">Who this workshop is for</h2>

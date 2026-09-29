@@ -171,7 +171,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <HeroSection />
+      {/* <HeroSection /> */}
 
       {/* Capability Carousel */}
       <section className="relative w-full overflow-hidden bg-[#0b1728] py-20 sm:py-24" data-testid="home-capability-carousel">
@@ -222,7 +222,7 @@ export default function Home() {
       </section>
 
       {/* Solutions and Academy */}
-      <section className="relative overflow-hidden bg-background py-16 sm:py-20">
+      <section className="hidden relative overflow-hidden bg-background py-16 sm:py-20">
         <div className="relative z-10 mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
           <a
             data-testid="card-solutions"

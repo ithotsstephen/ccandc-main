@@ -167,6 +167,22 @@
     background: var(--background);
   }
 
+  .training-landing .premium-card {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .training-landing .premium-button {
+    background: #e5bc68;
+    color: #0b1728;
+    box-shadow: none;
+  }
+
+  .training-landing .premium-button:hover {
+    background: #f0cf83;
+    box-shadow: none;
+  }
+
   .dark .service-card {
     border-color: transparent;
     background: linear-gradient(145deg, hsl(220, 13%, 12%), hsl(220, 13%, 10%));

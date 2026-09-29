@@ -16,7 +16,7 @@ type TrainingProps = {
 
 export default function Training({
   heroBadge = "Training",
-  heroTitle = <>From Framework to <span className="text-primary">Fluency</span></>,
+  heroTitle = <>From Framework to <span className="text-[#8fc7ff]">Fluency</span></>,
   documentTitle = "ArchIQ Training Platform - BIAN, TOGAF & IT4IT Mastery | CC&C Solutions",
   heroBackgroundClassName,
   heroAccentClassName,
@@ -166,28 +166,54 @@ export default function Training({
   }, [documentTitle]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen bg-background ${heroBadge === "Training" ? "training-landing" : ""}`}>
       <Navigation />
       {/* Hero Section */}
+      {heroBadge === "Training" ? (
+        <section className="relative overflow-hidden bg-[#0b1728] text-white">
+          <div className="absolute inset-0 overflow-hidden bg-[radial-gradient(circle_at_78%_48%,rgba(143,199,255,0.16),transparent_32%),linear-gradient(115deg,#0b1728_0%,#12345a_100%)]" aria-hidden="true">
+            <div className="absolute -right-24 top-1/2 h-[620px] w-[620px] -translate-y-1/2 rounded-full border border-[#8fc7ff]/20" />
+            <div className="hero-drift-slow absolute -right-2 top-1/2 h-[430px] w-[430px] -translate-y-1/2 rounded-full border border-[#8fc7ff]/25" />
+            <div className="absolute right-[11%] top-1/2 h-[230px] w-[230px] -translate-y-1/2 rounded-full border border-[#e5bc68]/40" />
+            <div className="absolute right-[11%] top-1/2 h-px w-[230px] bg-[#e5bc68]/45" />
+            <div className="absolute right-[calc(11%+115px)] top-[calc(50%-115px)] h-[230px] w-px bg-[#e5bc68]/35" />
+            <div className="absolute inset-y-0 right-0 w-[58%] opacity-45 [background-image:linear-gradient(rgba(143,199,255,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(143,199,255,0.14)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_right,transparent,black_28%,black)]" />
+            <div className="hero-drift-slow absolute right-0 top-[22%] h-px w-[52%] bg-gradient-to-l from-transparent via-[#8fc7ff]/60 to-transparent" />
+            <div className="hero-drift-slow absolute right-0 top-[74%] h-px w-[45%] bg-gradient-to-l from-transparent via-[#e5bc68]/45 to-transparent" />
+          </div>
+          <div className="relative mx-auto grid max-w-7xl gap-12 px-4 pb-20 pt-28 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:pb-28 lg:pt-36">
+            <div>
+              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-[#e5bc68]">Expert-led architecture training</p>
+              <h1 className="max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">{heroTitle}</h1>
+              <p className="mt-7 max-w-3xl text-lg leading-relaxed text-white/75 sm:text-xl">Expert-powered learning in BIAN, TOGAF, IT4IT and enterprise architecture, shaped by practitioners applying these frameworks in real transformation programmes.</p>
+              <div className="mt-9 flex flex-wrap gap-3">
+                <a href="#training-programs" className="inline-flex items-center gap-2 rounded-lg bg-[#e5bc68] px-5 py-3 font-semibold text-[#0b1728] transition-transform hover:-translate-y-0.5">Explore training <i className="fas fa-arrow-right" aria-hidden="true" /></a>
+                <a href="/training/all-courses" className="rounded-lg border border-white/30 px-5 py-3 font-semibold text-white transition-colors hover:bg-white/10">View all courses</a>
+              </div>
+            </div>
+            <div className="relative flex min-h-[280px] items-center justify-center border border-white/25 bg-white/5 p-8" aria-label="Architecture training pathways">
+              <div className="absolute left-1/2 top-10 bottom-10 w-px bg-[#8fc7ff]/40" aria-hidden="true" />
+              <div className="relative w-full max-w-sm space-y-4 text-center">
+                <div className="border border-[#8fc7ff]/40 bg-[#0b1728]/90 p-5"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8fc7ff]">Banking architecture</p><p className="mt-2 text-xl font-bold">BIAN</p><p className="mt-1 text-sm text-white/65">From foundation to applied practice</p></div>
+                <div className="grid grid-cols-2 gap-3"><div className="border border-[#e5bc68]/50 bg-[#0b1728]/90 p-4"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#e5bc68]">Enterprise method</p><p className="mt-2 font-bold">TOGAF®</p></div><div className="border border-[#8fc7ff]/40 bg-[#0b1728]/90 p-4"><p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8fc7ff]">IT value chain</p><p className="mt-2 font-bold">IT4IT™</p></div></div>
+                <div className="border border-white/25 bg-[#0b1728]/90 p-4 text-sm font-semibold">Practitioner-led learning · Real-world application</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : (
         <TrainingHeroBackdrop className="pt-24 pb-16" backgroundClassName={heroBackgroundClassName} accentClassName={heroAccentClassName}>
           <div className="text-center mb-8">
-            <div className="inline-block px-4 py-2 md:px-8 md:py-4 bg-white/20 border-2 border-white/40 rounded-full text-white font-bold text-2xl md:text-3xl mb-8 shadow-lg">
-              {heroBadge}
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              {heroTitle}
-            </h1>
-            <p className="text-3xl md:text-4xl font-semibold text-white max-w-4xl mx-auto mb-6">
-              BIAN Mastery, On Demand
-            </p>
-            <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">
-              Expert-powered learning platform delivering practical architecture training with real-world insight
-            </p>
+            <div className="inline-block px-4 py-2 md:px-8 md:py-4 bg-white/20 border-2 border-white/40 rounded-full text-white font-bold text-2xl md:text-3xl mb-8 shadow-lg">{heroBadge}</div>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">{heroTitle}</h1>
+            <p className="text-3xl md:text-4xl font-semibold text-white max-w-4xl mx-auto mb-6">BIAN Mastery, On Demand</p>
+            <p className="text-xl text-gray-200 max-w-4xl mx-auto leading-relaxed">Expert-powered learning platform delivering practical architecture training with real-world insight</p>
           </div>
-      </TrainingHeroBackdrop>
+        </TrainingHeroBackdrop>
+      )}
    
       {/* Training Built for Your Enterprise */}
-      <section className="py-20 section-dark">
+      <section id="training-programs" className="py-20 bg-[#f5f8fc] dark:bg-[#101923]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
@@ -259,7 +285,7 @@ export default function Training({
             {/* Organizational Context */}
             <Card className="premium-card">
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 bg-[#6933ff]">
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 bg-[#8fc7ff]">
                   <i className="fas fa-sitemap text-2xl text-white"></i>
                 </div>
                 <h3 className="text-xl font-bold text-card-foreground mb-4">Organizational Context</h3>
@@ -273,7 +299,7 @@ export default function Training({
             {/* Target Audiences */}
             <Card className="premium-card">
               <CardContent className="p-8">
-                <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 bg-[#e34012]">
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center mb-6 bg-[#e5bc68]">
                   <i className="fas fa-building text-2xl text-white"></i>
                 </div>
                 <h3 className="text-xl font-bold text-card-foreground mb-4">Who We Serve</h3>
@@ -286,7 +312,7 @@ export default function Training({
         </div>
       </section>
       {/* Training Deepened by Expertise */}
-      <section className="py-20 section-darker">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
@@ -614,8 +640,8 @@ Every bank has an AI strategy. But many struggle to achieve scale and hard benef
       </section>
 
 
-   {/* What the ArchIQ Platform Offers */}
-      <section className="py-20 section-darker">
+  {/* What the ArchIQ Platform Offers */}
+    <section className="py-20 bg-[#f5f8fc] dark:bg-[#101923]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">What the ArchIQ Platform Offers</h2>
@@ -696,7 +722,7 @@ Every bank has an AI strategy. But many struggle to achieve scale and hard benef
 
 
       {/* Client Testimonials */}
-      <section className="py-20 section-dark">
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">What Our Clients Say</h2>
@@ -792,7 +818,7 @@ ANZ BANK"
         </div>
       </section>
       {/* Industries Served Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-[#f5f8fc] dark:bg-[#101923]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Industries We Serve</h2>
