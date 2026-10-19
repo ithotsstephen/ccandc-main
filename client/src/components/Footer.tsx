@@ -9,7 +9,7 @@ export default function Footer() {
   const [termsDialogOpen, setTermsDialogOpen] = useState(false);
 
   return (
-    <footer className="bg-gray-800 text-primary-foreground py-16">
+    <footer className="bg-gray-800 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
@@ -21,7 +21,7 @@ export default function Footer() {
                 data-testid="img-logo-footer"
               />
             </div>
-            <p className="text-primary-foreground/80 mb-6">
+            <p className="text-white/80 mb-6">
               Powering digital transformation through world-class architecture consulting and training for over 20 years.
             </p>
             <div className="flex space-x-4">
@@ -29,28 +29,28 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/ccandcsolutions/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#e5bc68] transition-colors"
                 data-testid="link-linkedin"
               >
-                <i className="fab fa-linkedin text-primary-foreground"></i>
+                <i className="fab fa-linkedin text-white"></i>
               </a>
               <a 
                 href="https://x.com/ccandcsolutions" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#e5bc68] transition-colors"
                 data-testid="link-twitter"
               >
-                <i className="fab fa-twitter text-primary-foreground"></i>
+                <i className="fab fa-twitter text-white"></i>
               </a>
               <a 
                 href="https://www.youtube.com/@ccandcsolutions576" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-primary-foreground/10 rounded-lg flex items-center justify-center hover:bg-secondary transition-colors"
+                className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-[#e5bc68] transition-colors"
                 data-testid="link-youtube"
               >
-                <i className="fab fa-youtube text-primary-foreground"></i>
+                <i className="fab fa-youtube text-white"></i>
               </a>
             </div>
           </div>
@@ -59,11 +59,11 @@ export default function Footer() {
           
           <div>
             <h3 className="font-bold text-lg mb-4">Services</h3>
-            <ul className="space-y-2 text-primary-foreground/80">
+            <ul className="space-y-2 text-white/80">
               <li>
                 <button 
                   onClick={() => setLocation('/ccandc-training')} 
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-[#e5bc68] transition-colors text-left"
                   data-testid="link-archiq-training"
                 >
                   ArchIQ Training
@@ -72,7 +72,7 @@ export default function Footer() {
               <li>
                 <button 
                   onClick={() => setLocation('/consulting')} 
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-[#e5bc68] transition-colors text-left"
                   data-testid="link-adviseiq-consulting"
                 >
                   AdviseIQ Consulting
@@ -81,7 +81,7 @@ export default function Footer() {
               <li>
                 <button 
                   onClick={() => setLocation('/viztools')} 
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-[#e5bc68] transition-colors text-left"
                   data-testid="link-stratiq-visualisation"
                 >
                   StratIQ Visualisation Tools
@@ -92,11 +92,11 @@ export default function Footer() {
 
           <div>
             <h3 className="font-bold text-lg mb-4">Industries</h3>
-            <ul className="space-y-2 text-primary-foreground/80">
+            <ul className="space-y-2 text-white/80">
               <li>
                 <button 
                   onClick={() => setLocation('/banking')} 
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-[#e5bc68] transition-colors text-left"
                   data-testid="link-banking"
                 >
                   Banking
@@ -105,7 +105,7 @@ export default function Footer() {
               <li>
                 <button 
                   onClick={() => setLocation('/insurance')} 
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-[#e5bc68] transition-colors text-left"
                   data-testid="link-insurance"
                 >
                   Insurance
@@ -114,7 +114,7 @@ export default function Footer() {
               <li>
                 <button 
                   onClick={() => setLocation('/manufacturing')} 
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-[#e5bc68] transition-colors text-left"
                   data-testid="link-manufacturing"
                 >
                   Manufacturing
@@ -125,11 +125,11 @@ export default function Footer() {
           
           <div>
             <h3 className="font-bold text-lg mb-4">Company</h3>
-            <ul className="space-y-2 text-primary-foreground/80">
+            <ul className="space-y-2 text-white/80">
               <li>
                 <button 
                   onClick={() => setLocation('/about')} 
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-[#e5bc68] transition-colors text-left"
                   data-testid="link-about"
                 >
                   About
@@ -138,7 +138,7 @@ export default function Footer() {
               <li>
                 <button 
                   onClick={() => setLocation('/case-studies')} 
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-[#e5bc68] transition-colors text-left"
                   data-testid="link-case-studies"
                 >
                   Case Studies
@@ -147,7 +147,7 @@ export default function Footer() {
               <li>
                 <button 
                   onClick={() => setLocation('/contact')} 
-                  className="hover:text-secondary transition-colors text-left"
+                  className="hover:text-[#e5bc68] transition-colors text-left"
                   data-testid="link-contact"
                 >
                   Contact
@@ -158,12 +158,12 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-primary-foreground/20 pt-8 text-center">
-          <p className="text-primary-foreground/60">
+        <div className="border-t border-white/20 pt-8 text-center">
+          <p className="text-white/60">
             © 2026 CC&C Solutions. All rights reserved. |{' '}
             <button 
               onClick={() => setPrivacyDialogOpen(true)}
-              className="hover:text-secondary transition-colors underline"
+              className="hover:text-[#e5bc68] transition-colors underline"
               data-testid="link-privacy-policy"
             >
               Privacy Policy
@@ -171,7 +171,7 @@ export default function Footer() {
             |{' '}
             <button 
               onClick={() => setTermsDialogOpen(true)}
-              className="hover:text-secondary transition-colors underline"
+              className="hover:text-[#e5bc68] transition-colors underline"
               data-testid="link-terms-of-service"
             >
               Terms of Service

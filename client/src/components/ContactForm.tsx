@@ -206,15 +206,11 @@ export default function ContactForm({ showServiceInterest = true, trainingTheme 
   };
 
   return (
-    <section id="contact" className={trainingTheme ? "relative isolate overflow-hidden bg-[#0b1728] py-20" : "py-20 bg-primary"}>
-      {trainingTheme && <>
-        <div className="absolute inset-y-0 right-0 w-[58%] opacity-35 [background-image:linear-gradient(rgba(143,199,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(143,199,255,0.12)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:linear-gradient(to_right,transparent,black_28%,black)]" aria-hidden="true" />
-        <div className="absolute right-[8%] top-1/2 h-[320px] w-[320px] -translate-y-1/2 rounded-full border border-[#8fc7ff]/15" aria-hidden="true" />
-      </>}
-      <div className={`relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${trainingTheme ? "text-white" : ""}`}>
+    <section id="contact" className={trainingTheme ? "bg-background py-20" : "py-20 bg-primary"}>
+      <div className={`relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${trainingTheme ? "text-foreground" : ""}`}>
         {trainingTheme && <div className="mb-10 text-center">
-          <MessageSquareText className="mx-auto mb-4 h-8 w-8 text-[#e5bc68]" aria-hidden="true" />
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8fc7ff]">Tell us what you are working through</p>
+          <MessageSquareText className="mx-auto mb-4 h-8 w-8 text-[#a67520]" aria-hidden="true" />
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#12345a]">Tell us what you are working through</p>
           <h2 className="mt-3 text-3xl font-bold sm:text-4xl">Talk with our architecture team.</h2>
         </div>}
 

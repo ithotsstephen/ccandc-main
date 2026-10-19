@@ -261,8 +261,10 @@ export default function BianFoundationPractitionerCourse() {
                 <BulletList items={reasons} />
               </div>
             </div>
+            <div className="flex flex-col items-center gap-6">
+              <img src="/assets/Images/BIAN_Foundation.png" alt="BIAN Foundation certification badge" width="225" height="225" className="h-auto w-full max-w-[225px]" loading="lazy" />
             <div
-              className="relative min-h-[390px] overflow-hidden border border-[#8fc7ff]/40 bg-white/70 p-8 dark:bg-white/5 sm:p-10"
+              className="relative w-full min-h-[390px] overflow-hidden border border-[#8fc7ff]/40 bg-white/70 p-8 dark:bg-white/5 sm:p-10"
               aria-label="BIAN architecture concepts"
             >
               <div
@@ -299,6 +301,7 @@ export default function BianFoundationPractitionerCourse() {
                   <p className="mt-2 font-bold">Semantic APIs</p>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </section>

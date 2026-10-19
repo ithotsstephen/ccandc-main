@@ -22,6 +22,8 @@ const homeCapabilitySlides = [
     label: "Consulting",
     headline: "Turn strategy into measurable transformation.",
     description: "Our expert consultants help organisations align business strategy, enterprise architecture, and IT delivery. We provide practical guidance that builds lasting capability and self-sufficiency.",
+    href: "/consulting",
+    ctaLabel: "Explore consulting",
     icon: Building2,
     accent: "text-[#8fc7ff]",
   },
@@ -29,6 +31,8 @@ const homeCapabilitySlides = [
     label: "BIAN",
     headline: "Accelerate your journey towards modern banking architecture.",
     description: "As a BIAN-accredited partner, CC&C helps banks adopt and implement the BIAN framework. Our expertise enables standardised, modular, reusable, and agile financial services.",
+    href: "/bian-training",
+    ctaLabel: "View BIAN solutions",
     icon: Landmark,
     accent: "text-[#e5bc68]",
   },
@@ -36,6 +40,8 @@ const homeCapabilitySlides = [
     label: "Products",
     headline: "Smart solutions for architecture and transformation.",
     description: "Our purpose-built products simplify architecture management, capability development, and digital transformation. They provide actionable insights that help organisations make informed decisions.",
+    href: "/products",
+    ctaLabel: "See products",
     icon: PackageOpen,
     accent: "text-[#79d8d1]",
   },
@@ -43,6 +49,8 @@ const homeCapabilitySlides = [
     label: "Training",
     headline: "Build the skills required to lead transformation.",
     description: "Our practitioner-led training covers BIAN, TOGAF®, IT4IT™, enterprise architecture, and digital transformation. Teams gain practical knowledge they can confidently apply in real-world environments.",
+    href: "/training",
+    ctaLabel: "Explore training",
     icon: GraduationCap,
     accent: "text-[#e7a5d1]",
   },
@@ -58,7 +66,7 @@ export default function Home() {
 
     const intervalId = window.setInterval(() => {
       capabilityApi.scrollNext();
-    }, 5000);
+    }, 6500);
 
     return () => window.clearInterval(intervalId);
   }, [capabilityApi]);
@@ -174,15 +182,15 @@ export default function Home() {
       {/* <HeroSection /> */}
 
       {/* Capability Carousel */}
-      <section className="relative w-full overflow-hidden bg-[#0b1728] py-20 sm:py-24" data-testid="home-capability-carousel">
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section className="relative w-full overflow-hidden bg-[#0b1728] pb-4 pt-10 sm:pb-6 sm:pt-12" data-testid="home-capability-carousel">
+        <div className="relative mx-auto max-w-[1440px] px-3 sm:px-4 lg:px-5">
           <Carousel opts={{ align: "start", loop: true }} setApi={setCapabilityApi} className="w-full">
             <CarouselContent className="-ml-4">
               {homeCapabilitySlides.map((slide) => {
                 const Icon = slide.icon;
                 return (
                   <CarouselItem key={slide.label} className="pl-4 basis-full">
-                    <div className="relative min-h-[460px] overflow-hidden bg-transparent p-8 sm:p-14 md:p-20">
+                    <div className="relative min-h-[380px] overflow-hidden px-12 pb-6 pt-8 sm:px-14 sm:pb-6 sm:pt-9 md:px-16 md:pb-6 md:pt-10">
                       <div className="pointer-events-none absolute right-4 top-1/2 hidden h-80 w-80 -translate-y-1/2 opacity-70 sm:block" aria-hidden="true">
                         <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white/15" />
                         <div className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white/15" />
@@ -194,13 +202,13 @@ export default function Home() {
                         <div className="absolute left-8 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-[#8fc7ff]" />
                         <div className="absolute right-8 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-[#e5bc68]" />
                       </div>
-                      <div className="relative z-10 flex h-full min-h-[320px] flex-col justify-between md:pr-72">
+                      <div className="relative z-10 flex min-h-[300px] flex-col justify-between md:pr-72">
                         <div className="flex items-start justify-between gap-6">
                           <div className={`flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 sm:h-20 sm:w-20 ${slide.accent}`}>
                             <Icon className="h-8 w-8 sm:h-10 sm:w-10" strokeWidth={1.7} />
                           </div>
                         </div>
-                        <div className="mt-12 max-w-3xl">
+                        <div className="mt-8 max-w-3xl">
                           <div className={`mb-5 text-2xl font-extrabold uppercase tracking-[0.18em] sm:text-3xl ${slide.accent}`}>
                             {slide.label}
                           </div>
@@ -210,6 +218,21 @@ export default function Home() {
                           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
                             {slide.description}
                           </p>
+                          <div className="mt-8 flex flex-wrap items-center gap-4">
+                            <a
+                              href={slide.href}
+                              className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#0b1728] transition-transform duration-200 hover:scale-[1.02] hover:bg-[#dfeeff]"
+                            >
+                              {slide.ctaLabel}
+                              <ArrowRight className="h-4 w-4" />
+                            </a>
+                            <a
+                              href="/contact"
+                              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:border-white/40 hover:bg-white/10"
+                            >
+                              Talk to an expert
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -217,6 +240,8 @@ export default function Home() {
                 );
               })}
             </CarouselContent>
+            <CarouselPrevious className="left-0 z-20 h-10 w-10 border-white/20 bg-white/90 text-[#0b1728] shadow-lg hover:bg-white hover:text-[#0b1728] md:-left-2 lg:-left-4" />
+            <CarouselNext className="right-0 z-20 h-10 w-10 border-white/20 bg-white/90 text-[#0b1728] shadow-lg hover:bg-white hover:text-[#0b1728] md:-right-2 lg:-right-4" />
           </Carousel>
         </div>
       </section>
