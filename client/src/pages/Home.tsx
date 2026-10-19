@@ -246,6 +246,45 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-b border-border bg-background py-16 sm:py-20 lg:py-24" data-testid="home-about-intro">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(360px,0.85fr)] lg:gap-16 lg:px-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">What We Are All About</p>
+            <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight text-foreground sm:text-4xl">
+              Turning strategy into delivery through architecture and AI.
+            </h2>
+            <div className="mt-7 space-y-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p>
+                CC&amp;C Solutions helps banks and financial institutions turn strategy into delivery through the right architecture, strengthened by the intelligent use of AI. Our consultants work alongside leadership and delivery teams to resolve the decisions that stall change, from service boundaries and platform choices to the meaning and governance of data.
+              </p>
+              <p>
+                We bring more than twenty years of enterprise architecture practice, combined with the pace that modern tooling and AI make possible, so that business ambition becomes working change sooner and with fewer surprises.
+              </p>
+              <p>
+                We believe in a better way of doing consultancy. We work closely with our clients until we understand their business as well as they do, and we teach as we go. Through accredited training in AI, TOGAF, BIAN, BIZBOK and IT4IT, and through our own suite of tools &amp; skills transformation services, tailored to each organisation, we leave clients with the knowledge and capability to sustain change long after the engagement ends.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-[520px] overflow-hidden rounded-lg bg-[#102d3d] shadow-[0_24px_64px_-32px_rgba(11,23,40,0.55)]">
+            <img
+              src="/assets/Images/togaf-corporate-team.jpg"
+              alt="Colleagues working together in a collaborative office"
+              className="aspect-[4/3] w-full object-cover object-center"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#102d3d]/90 via-[#102d3d]/10 to-transparent" aria-hidden="true" />
+            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+              <div className="mb-3 h-1 w-12 rounded-full bg-[#e5b85c]" aria-hidden="true" />
+              <p className="text-xl font-semibold text-white sm:text-2xl">Better change, built together.</p>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-white/80 sm:text-base">
+                Working alongside your teams, sharing knowledge at every step.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Solutions and Academy */}
       <section className="hidden relative overflow-hidden bg-background py-16 sm:py-20">
         <div className="relative z-10 mx-auto grid max-w-6xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
@@ -362,7 +401,7 @@ export default function Home() {
   
       
       {/* Market Success & Recognition - Redesigned */}
-      <section className="py-24 relative overflow-hidden bg-[hsl(211,86%,98%)] dark:bg-[hsl(220,13%,9%)] border-y border-[hsl(211,86%,40%)]/10">
+      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden bg-[hsl(211,86%,98%)] dark:bg-[hsl(220,13%,9%)] border-y border-[hsl(211,86%,40%)]/10">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -372,22 +411,41 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Enhanced Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-primary/10 border border-primary/20 rounded-full text-primary font-medium text-sm mb-6">
+          <div className="text-center">
+            <div className="inline-flex items-center px-6 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary font-medium text-sm mb-4">
               <i className="fas fa-star mr-2"></i>
               Industry Leadership
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-4 leading-tight">
               Market Success &<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary">Recognition</span>
+              <span className="text-4xl md:text-6xl font-bold text-foreground mb-8 leading-tight">Recognition</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               Proven excellence through industry-leading achievements, prestigious partnerships, 
               and global recognition that sets us apart in the enterprise architecture space
             </p>
+            <img
+              src="/assets/Images/homebannerimage.png"
+              alt="CC&C Solutions industry achievements, partnerships, and global recognition"
+              className="mx-auto mt-8 h-auto w-full max-w-6xl rounded-xl shadow-lg"
+              loading="lazy"
+            />
+            <div className="mx-auto mt-6 max-w-5xl rounded-2xl border border-primary/15 bg-background/80 px-6 py-6 text-left shadow-sm sm:px-8 sm:py-7">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <i className="fas fa-award text-xl" aria-hidden="true"></i>
+                </div>
+                <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                  We are proud to be recognised by the Banking Industry Architecture Network (BIAN) as its{" "}
+                  <span className="font-semibold text-foreground">Best-in-Class Partner for 2024 and 2025</span>.
+                  This recognition reflects our work helping banks adopt BIAN, our practical BIAN consulting and training, and our contribution to the BIAN framework.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Achievement Grid */}
+          {false && (
           <div className="grid lg:grid-cols-3 gap-8">
             {/* BIAN Award */}
             <div className="premium-card group hover:scale-105 transition-all duration-500 p-8 text-center relative">
@@ -402,8 +460,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-card-foreground mb-4">BIAN Excellence</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Prestigious BIAN award for Service Partner & Transformation, recognizing our unparalleled 
-                  excellence in banking architecture implementation and industry innovation.
+                    We are proud to be recognised by the Banking Industry Architecture Network (BIAN) as its Best-in-Class Partner in both 2024 and 2025, a reflection of our BIAN adoption and consulting work with banks, our fit for purpose BIAN training and our contribution to the BIAN framework.
                 </p>
                    <div className="flex items-center justify-center space-x-4 text-sm text-primary">
                   <div className="flex items-center">
@@ -476,7 +533,40 @@ export default function Home() {
               </div>
             </div>
           </div>
+          )}
 
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden border-y border-[#d9e3e5] bg-[#f2f6f4] py-16 sm:py-20 lg:py-24" data-testid="home-delivery-gap">
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 opacity-50 lg:block"
+          aria-hidden="true"
+          style={{ backgroundImage: "linear-gradient(135deg, transparent 49.8%, rgba(43, 119, 116, 0.12) 50%, transparent 50.2%)", backgroundSize: "36px 36px" }}
+        />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16 lg:px-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#2b7774]">What gap we fill in</p>
+            <h2 className="mt-5 max-w-xl text-4xl font-bold leading-[1.08] text-[#102d3d] sm:text-5xl">
+              Transformation fails in the space between strategy and delivery.
+            </h2>
+            <div className="mt-9 flex max-w-md items-center gap-3" aria-label="Strategy connects through the delivery gap to delivery">
+              <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#526c70]">Strategy</span>
+              <span className="h-px flex-1 bg-[#9bb4b2]" aria-hidden="true" />
+              <span className="whitespace-nowrap rounded-sm bg-[#e5b85c] px-3 py-2 text-xs font-bold uppercase tracking-[0.1em] text-[#263746]">The gap</span>
+              <span className="h-px flex-1 bg-[#9bb4b2]" aria-hidden="true" />
+              <span className="text-xs font-semibold uppercase tracking-[0.1em] text-[#526c70]">Delivery</span>
+            </div>
+          </div>
+
+          <div className="max-w-2xl space-y-6 border-l-2 border-[#2b7774]/30 pl-6 text-base leading-relaxed text-[#455e63] sm:pl-8 sm:text-lg">
+            <p>
+              Every programme begins with a strategy that sounds coherent in the boardroom and a delivery plan that sounds achievable in the project office. The failure point sits in between, where operating models, governance, data flows and human behaviour have to reconcile with a vision that was never designed to survive contact with operations.
+            </p>
+            <p className="font-semibold text-[#102d3d]">
+              CC and C treats that gap as the actual work.
+            </p>
+          </div>
         </div>
       </section>
 
