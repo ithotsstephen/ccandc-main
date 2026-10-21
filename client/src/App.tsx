@@ -16,6 +16,7 @@ import Consulting from "@/pages/Consulting";
 import About from "@/pages/About";
 import WhatWeDo from "@/pages/WhatWeDo";
 import Training from "@/pages/Training";
+import TrainingLanding from "@/pages/TrainingLanding";
 import AllCourses from "@/pages/AllCourses";
 import Products from "@/pages/Products";
 import Insights from "@/pages/Insights";
@@ -85,7 +86,7 @@ function AppRouter() {
       <Route path="/" component={Home} />
       <Route path="/what-we-do" component={WhatWeDo} />
       <Route path="/ccandc-training" component={Training} />
-      <Route path="/training" component={Training} />
+      <Route path="/training" component={TrainingLanding} />
       <Route path="/training/all-courses" component={AllCourses} />
       <Route path="/products" component={Products} />
       <Route path="/training/architecting-the-ai-powered-bank" component={ArchitectingAIPoweredBank} />
