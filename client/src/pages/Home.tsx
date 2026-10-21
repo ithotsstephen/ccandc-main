@@ -401,7 +401,7 @@ export default function Home() {
   
       
       {/* Market Success & Recognition - Redesigned */}
-      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden bg-[hsl(211,86%,98%)] dark:bg-[hsl(220,13%,9%)] border-y border-[hsl(211,86%,40%)]/10">
+      <section className="py-12 sm:py-16 lg:py-20 relative overflow-hidden bg-[hsl(211,86%,98%)] dark:bg-neutral-950 border-y border-[hsl(211,86%,40%)]/10 dark:border-neutral-800">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -430,7 +430,7 @@ export default function Home() {
               className="mx-auto mt-8 h-auto w-full max-w-6xl rounded-xl shadow-lg"
               loading="lazy"
             />
-            <div className="mx-auto mt-6 max-w-5xl rounded-2xl border border-primary/15 bg-background/80 px-6 py-6 text-left shadow-sm sm:px-8 sm:py-7">
+            <div className="mx-auto mt-6 max-w-5xl rounded-2xl border border-primary/15 bg-background/80 px-6 py-6 text-left shadow-sm dark:border-neutral-700 dark:bg-neutral-900/80 sm:px-8 sm:py-7">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-5">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                   <i className="fas fa-award text-xl" aria-hidden="true"></i>
